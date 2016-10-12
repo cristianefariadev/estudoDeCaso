@@ -28,6 +28,9 @@ import javax.swing.border.LineBorder;
 import java.awt.Panel;
 import javax.swing.JRadioButton;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JSeparator;
 
 public class LocacaoView extends JFrame {
 
@@ -35,11 +38,12 @@ public class LocacaoView extends JFrame {
 	private JTextField txtCnh;
 	private JTextField txtCategoria;
 	private JTable table;
-	private JTextField textField;
-	private JTextField txtDtlocacao;
-	private JTextField textField_1;
+	private JTextField txtDtLocacao;
+	private JTextField txtDtDevolucao;
 	private JTextField txtQtddiasloc;
 	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -63,196 +67,225 @@ public class LocacaoView extends JFrame {
 	public LocacaoView() {
 		setTitle("Pedido de Loca\u00E7\u00E3o");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 672, 514);
+		setBounds(100, 100, 672, 555);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Dados do Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel.setBounds(342, 11, 304, 124);
-		contentPane.add(panel);
-		panel.setLayout(null);
+		JPanel panelDadosCliente = new JPanel();
+		panelDadosCliente.setBorder(new TitledBorder(null, "Dados do Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelDadosCliente.setBounds(10, 11, 304, 124);
+		contentPane.add(panelDadosCliente);
+		panelDadosCliente.setLayout(null);
 		
 		JLabel lblCliente = new JLabel("Cliente:");
 		lblCliente.setBounds(9, 21, 37, 14);
-		panel.add(lblCliente);
+		panelDadosCliente.add(lblCliente);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(9, 35, 274, 20);
-		panel.add(comboBox);
+		panelDadosCliente.add(comboBox);
 		
 		JLabel lblCnh = new JLabel("N\u00FAmero de Registro CNH:");
 		lblCnh.setBounds(9, 66, 128, 14);
-		panel.add(lblCnh);
+		panelDadosCliente.add(lblCnh);
 		
 		txtCnh = new JTextField();
 		txtCnh.setBounds(9, 79, 107, 20);
-		panel.add(txtCnh);
+		panelDadosCliente.add(txtCnh);
 		txtCnh.setColumns(10);
 		
 		JLabel lblCategoria = new JLabel("Categoria CNH:");
 		lblCategoria.setBounds(157, 66, 86, 14);
-		panel.add(lblCategoria);
+		panelDadosCliente.add(lblCategoria);
 		
 		txtCategoria = new JTextField();
 		txtCategoria.setBounds(157, 79, 102, 20);
-		panel.add(txtCategoria);
+		panelDadosCliente.add(txtCategoria);
 		txtCategoria.setColumns(10);
 		
-		Box verticalBox = Box.createVerticalBox();
-		verticalBox.setBounds(324, 0, 8, 476);
-		contentPane.add(verticalBox);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Selecionar Ve\u00EDculos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(10, 11, 304, 423);
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
+		JPanel panelSelecVeiculos = new JPanel();
+		panelSelecVeiculos.setBorder(new TitledBorder(null, "Selecionar Ve\u00EDculos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelSelecVeiculos.setBounds(10, 146, 304, 371);
+		contentPane.add(panelSelecVeiculos);
+		panelSelecVeiculos.setLayout(null);
 		
 		JLabel lblModelo = new JLabel("Modelo:");
 		lblModelo.setBounds(155, 23, 46, 14);
-		panel_1.add(lblModelo);
+		panelSelecVeiculos.add(lblModelo);
 		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(10, 38, 125, 20);
-		panel_1.add(comboBox_1);
+		panelSelecVeiculos.add(comboBox_1);
 		
 		JLabel lblMarca = new JLabel("Marca:");
 		lblMarca.setBounds(10, 23, 46, 14);
-		panel_1.add(lblMarca);
+		panelSelecVeiculos.add(lblMarca);
 		
 		JComboBox comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(155, 38, 125, 20);
-		panel_1.add(comboBox_2);
+		panelSelecVeiculos.add(comboBox_2);
 		
 		JCheckBox chckbxArCondicionado = new JCheckBox("Ar Condicionado");
 		chckbxArCondicionado.setBounds(6, 69, 129, 23);
-		panel_1.add(chckbxArCondicionado);
+		panelSelecVeiculos.add(chckbxArCondicionado);
 		
 		JCheckBox chckbxCmbioAutomtico = new JCheckBox("C\u00E2mbio Autom\u00E1tico");
 		chckbxCmbioAutomtico.setBounds(6, 95, 129, 23);
-		panel_1.add(chckbxCmbioAutomtico);
+		panelSelecVeiculos.add(chckbxCmbioAutomtico);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("DVD Player");
 		chckbxNewCheckBox.setBounds(6, 121, 97, 23);
-		panel_1.add(chckbxNewCheckBox);
+		panelSelecVeiculos.add(chckbxNewCheckBox);
 		
 		JCheckBox chckbxDireoEltrica = new JCheckBox("Dire\u00E7\u00E3o El\u00E9trica");
 		chckbxDireoEltrica.setBounds(155, 69, 125, 23);
-		panel_1.add(chckbxDireoEltrica);
+		panelSelecVeiculos.add(chckbxDireoEltrica);
 		
 		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Dire\u00E7\u00E3o Assistida");
 		chckbxNewCheckBox_1.setBounds(155, 95, 125, 23);
-		panel_1.add(chckbxNewCheckBox_1);
+		panelSelecVeiculos.add(chckbxNewCheckBox_1);
 		
 		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("Flex");
 		chckbxNewCheckBox_2.setBounds(155, 121, 125, 23);
-		panel_1.add(chckbxNewCheckBox_2);
+		panelSelecVeiculos.add(chckbxNewCheckBox_2);
 		
 		JButton btnFiltrarVeculos = new JButton("Filtrar Ve\u00EDculos");
-		btnFiltrarVeculos.setBounds(155, 162, 125, 23);
-		panel_1.add(btnFiltrarVeculos);
+		btnFiltrarVeculos.setBounds(155, 151, 125, 23);
+		panelSelecVeiculos.add(btnFiltrarVeculos);
 		
 		table = new JTable();
 		table.setBorder(new LineBorder(new Color(0, 0, 0)));
-		table.setBounds(10, 196, 284, 185);
-		panel_1.add(table);
+		table.setBounds(10, 185, 284, 159);
+		panelSelecVeiculos.add(table);
 		
-		JLabel lblSubtotal = new JLabel("SubTotal:");
-		lblSubtotal.setBounds(148, 398, 53, 14);
-		panel_1.add(lblSubtotal);
-		
-		textField = new JTextField();
-		textField.setBounds(208, 395, 86, 20);
-		panel_1.add(textField);
-		textField.setColumns(10);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(null, "Dados da Loca\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(342, 146, 304, 221);
-		contentPane.add(panel_2);
-		panel_2.setLayout(null);
+		JPanel panelDadosLocacao = new JPanel();
+		panelDadosLocacao.setBorder(new TitledBorder(null, "Dados da Loca\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelDadosLocacao.setBounds(342, 11, 288, 258);
+		contentPane.add(panelDadosLocacao);
+		panelDadosLocacao.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Data Loca\u00E7\u00E3o:");
 		lblNewLabel.setBounds(10, 22, 77, 14);
-		panel_2.add(lblNewLabel);
+		panelDadosLocacao.add(lblNewLabel);
 		
-		txtDtlocacao = new JTextField();
-		txtDtlocacao.setText("dtLocacao");
-		txtDtlocacao.setBounds(10, 40, 113, 20);
-		panel_2.add(txtDtlocacao);
-		txtDtlocacao.setColumns(10);
+		txtDtLocacao = new JTextField();
+		txtDtLocacao.setBounds(10, 40, 113, 20);
+		panelDadosLocacao.add(txtDtLocacao);
+		txtDtLocacao.setColumns(10);
 		
 		JLabel lblSada = new JLabel("Data Devolu\u00E7\u00E3o:");
-		lblSada.setBounds(10, 70, 86, 14);
-		panel_2.add(lblSada);
+		lblSada.setBounds(152, 22, 86, 14);
+		panelDadosLocacao.add(lblSada);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(10, 88, 113, 20);
-		panel_2.add(textField_1);
-		textField_1.setColumns(10);
+		txtDtDevolucao = new JTextField();
+		txtDtDevolucao.setBounds(152, 40, 113, 20);
+		panelDadosLocacao.add(txtDtDevolucao);
+		txtDtDevolucao.setColumns(10);
 		
 		JLabel lblQuantidadeDeDias = new JLabel("Quantidade de dias:");
-		lblQuantidadeDeDias.setBounds(160, 22, 113, 14);
-		panel_2.add(lblQuantidadeDeDias);
+		lblQuantidadeDeDias.setBounds(10, 162, 113, 14);
+		panelDadosLocacao.add(lblQuantidadeDeDias);
 		
 		txtQtddiasloc = new JTextField();
 		txtQtddiasloc.setText("qtdDiasLoc");
-		txtQtddiasloc.setBounds(160, 40, 86, 20);
-		panel_2.add(txtQtddiasloc);
+		txtQtddiasloc.setBounds(10, 179, 113, 20);
+		panelDadosLocacao.add(txtQtddiasloc);
 		txtQtddiasloc.setColumns(10);
 		
-		JLabel lblSubtotal_1 = new JLabel("SubTotal:");
-		lblSubtotal_1.setBounds(160, 70, 46, 14);
-		panel_2.add(lblSubtotal_1);
-		
 		textField_2 = new JTextField();
-		textField_2.setBounds(160, 88, 86, 20);
-		panel_2.add(textField_2);
+		textField_2.setBounds(152, 180, 113, 20);
+		panelDadosLocacao.add(textField_2);
 		textField_2.setColumns(10);
 		
 		JLabel lblLocalDeOrigem = new JLabel("Local de origem:");
-		lblLocalDeOrigem.setBounds(10, 119, 86, 14);
-		panel_2.add(lblLocalDeOrigem);
+		lblLocalDeOrigem.setBounds(10, 71, 86, 14);
+		panelDadosLocacao.add(lblLocalDeOrigem);
 		
 		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(10, 134, 46, 20);
-		panel_2.add(comboBox_3);
+		comboBox_3.setBounds(10, 86, 46, 20);
+		panelDadosLocacao.add(comboBox_3);
 		
 		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setBounds(66, 134, 180, 20);
-		panel_2.add(comboBox_4);
+		comboBox_4.setBounds(66, 86, 199, 20);
+		panelDadosLocacao.add(comboBox_4);
 		
 		JLabel lblLocalDeDestino = new JLabel("Local de destino:");
-		lblLocalDeDestino.setBounds(10, 164, 86, 14);
-		panel_2.add(lblLocalDeDestino);
+		lblLocalDeDestino.setBounds(10, 116, 86, 14);
+		panelDadosLocacao.add(lblLocalDeDestino);
 		
 		JComboBox comboBox_5 = new JComboBox();
-		comboBox_5.setBounds(10, 179, 46, 20);
-		panel_2.add(comboBox_5);
+		comboBox_5.setBounds(10, 131, 46, 20);
+		panelDadosLocacao.add(comboBox_5);
 		
 		JComboBox comboBox_6 = new JComboBox();
-		comboBox_6.setBounds(66, 179, 180, 20);
-		panel_2.add(comboBox_6);
+		comboBox_6.setBounds(66, 131, 199, 20);
+		panelDadosLocacao.add(comboBox_6);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Pagamento Cau\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_3.setBounds(342, 377, 304, 88);
-		contentPane.add(panel_3);
-		panel_3.setLayout(null);
+		JLabel lblQuantidadeDeKm = new JLabel("Quantidade de km:");
+		lblQuantidadeDeKm.setBounds(152, 162, 113, 14);
+		panelDadosLocacao.add(lblQuantidadeDeKm);
+		
+		JLabel lblValorAPagar = new JLabel("Valor a pagar:");
+		lblValorAPagar.setBounds(10, 210, 76, 14);
+		panelDadosLocacao.add(lblValorAPagar);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(10, 227, 113, 20);
+		panelDadosLocacao.add(textField_3);
+		textField_3.setColumns(10);
+		
+		JLabel lblValorCauo = new JLabel("Valor Cau\u00E7\u00E3o:");
+		lblValorCauo.setBounds(152, 211, 67, 14);
+		panelDadosLocacao.add(lblValorCauo);
+		
+		textField = new JTextField();
+		textField.setBounds(152, 227, 113, 20);
+		panelDadosLocacao.add(textField);
+		textField.setColumns(10);
+		
+		JPanel panelPagamento = new JPanel();
+		panelPagamento.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Pagamento Cau\u00E7\u00E3o", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panelPagamento.setBounds(342, 280, 288, 186);
+		contentPane.add(panelPagamento);
+		panelPagamento.setLayout(null);
 		
 		JRadioButton rdbtnDinheiro = new JRadioButton("Dinheiro");
-		rdbtnDinheiro.setBounds(6, 19, 65, 23);
-		panel_3.add(rdbtnDinheiro);
+		rdbtnDinheiro.setBounds(6, 37, 65, 23);
+		panelPagamento.add(rdbtnDinheiro);
 		
 		JRadioButton rdbtnCartoDeCrdito = new JRadioButton("Cart\u00E3o de Cr\u00E9dito");
-		rdbtnCartoDeCrdito.setBounds(81, 19, 137, 23);
-		panel_3.add(rdbtnCartoDeCrdito);
+		rdbtnCartoDeCrdito.setBounds(81, 37, 137, 23);
+		panelPagamento.add(rdbtnCartoDeCrdito);
 		
-		JButton btnPagar = new JButton("Pagar");
-		btnPagar.setBounds(186, 49, 89, 23);
-		panel_3.add(btnPagar);
+		JButton btnPagar = new JButton("Efetuar Pagamento");
+		btnPagar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnPagar.setBounds(93, 115, 125, 23);
+		panelPagamento.add(btnPagar);
+		
+		JLabel lblFormaDePagamento = new JLabel("Forma de Pagamento:");
+		lblFormaDePagamento.setBounds(10, 21, 106, 14);
+		panelPagamento.add(lblFormaDePagamento);
+		
+		JButton btnImprimirLocao = new JButton("Imprimir");
+		btnImprimirLocao.setBounds(345, 477, 89, 23);
+		contentPane.add(btnImprimirLocao);
+		
+		JButton btnNovaLocao = new JButton("Nova Loca\u00E7\u00E3o");
+		btnNovaLocao.setBounds(444, 477, 109, 23);
+		contentPane.add(btnNovaLocao);
+		
+		JButton btnSair = new JButton("Sair");
+		btnSair.setBounds(563, 477, 65, 23);
+		contentPane.add(btnSair);
+		
+		JSeparator separator = new JSeparator();
+		separator.setOrientation(SwingConstants.VERTICAL);
+		separator.setBounds(326, 0, 4, 517);
+		contentPane.add(separator);
 	}
 }

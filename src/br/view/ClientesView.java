@@ -105,7 +105,7 @@ public class ClientesView extends JInternalFrame {
 		panelInserir.add(lblNomeCompleto);
 		
 		JLabel label_1 = new JLabel("Telefone:");
-		label_1.setBounds(330, 129, 48, 14);
+		label_1.setBounds(330, 120, 48, 14);
 		panelInserir.add(label_1);
 		
 		txtRegistro = new JTextField();
@@ -122,12 +122,12 @@ public class ClientesView extends JInternalFrame {
 		panelInserir.add(button_1);
 		
 		JLabel label_3 = new JLabel("RG:");
-		label_3.setBounds(164, 124, 46, 14);
+		label_3.setBounds(164, 120, 46, 14);
 		panelInserir.add(label_3);
 		
 		txtRg = new JTextField();
 		txtRg.setColumns(10);
-		txtRg.setBounds(164, 143, 137, 20);
+		txtRg.setBounds(164, 134, 137, 20);
 		panelInserir.add(txtRg);
 		
 		JLabel lblNmeroDeRegistro = new JLabel("N\u00FAmero de Registro CNH:");
@@ -154,7 +154,7 @@ public class ClientesView extends JInternalFrame {
 		panelInserir.add(lblCategoriaCnh);
 		
 		JLabel lblCpf = new JLabel("CPF:");
-		lblCpf.setBounds(10, 124, 46, 14);
+		lblCpf.setBounds(10, 120, 46, 14);
 		panelInserir.add(lblCpf);
 		
 		txtCatcnh = new JTextField();
@@ -164,7 +164,7 @@ public class ClientesView extends JInternalFrame {
 		txtCatcnh.setColumns(10);
 		
 		txtTelefone = new JTextField();
-		txtTelefone.setBounds(330, 143, 124, 20);
+		txtTelefone.setBounds(330, 134, 124, 20);
 		panelInserir.add(txtTelefone);
 		txtTelefone.setColumns(10);
 		
@@ -177,7 +177,7 @@ public class ClientesView extends JInternalFrame {
 		panelInserir.add(comboBox);
 		
 		txtCpf = new JTextField();
-		txtCpf.setBounds(10, 143, 128, 20);
+		txtCpf.setBounds(10, 134, 128, 20);
 		panelInserir.add(txtCpf);
 		txtCpf.setColumns(10);
 		
