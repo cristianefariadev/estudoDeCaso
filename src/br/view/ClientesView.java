@@ -1,34 +1,36 @@
 package br.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JInternalFrame;
-import javax.swing.JPanel;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.BevelBorder;
-import javax.swing.UIManager;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JScrollPane;
+import java.awt.EventQueue;
 import java.awt.Font;
+
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
-import javax.swing.JComboBox;
+import javax.swing.border.TitledBorder;
 
 public class ClientesView extends JInternalFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField txtRegistro;
 	private JTextField txtRg;
 	private JTextField txtNumRegistroCNH;
-	private JTextField textField_4;
 	private JTextField txtNome;
 	private JTextField txtCatcnh;
 	private JTextField txtTelefone;
 	private JTextField txtCpf;
+	private JTextField txtEndereco;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -50,52 +52,17 @@ public class ClientesView extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public ClientesView() {
-		setBounds(100, 100, 523, 652);
+		setTitle("Cadastro Cliente");
+		setBounds(100, 100, 521, 399);
 		getContentPane().setLayout(null);
 		
 		JPanel panelConteiner = new JPanel();
-		panelConteiner.setBounds(0, 0, 507, 623);
+		panelConteiner.setBounds(0, 0, 507, 365);
 		getContentPane().add(panelConteiner);
 		panelConteiner.setLayout(null);
 		
-		JPanel panelMenu = new JPanel();
-		panelMenu.setBounds(10, 11, 489, 61);
-		panelConteiner.add(panelMenu);
-		panelMenu.setLayout(null);
-		panelMenu.setBorder(new LineBorder(new Color(0, 0, 0)));
-		
-		JButton btnEditar = new JButton("");
-		btnEditar.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_edit.png")));
-		btnEditar.setBounds(97, 11, 61, 34);
-		panelMenu.add(btnEditar);
-		
-		JButton btnNovo = new JButton("");
-		btnNovo.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_add.png")));
-		btnNovo.setBounds(26, 11, 61, 34);
-		panelMenu.add(btnNovo);
-		
-		JButton btnExcluir = new JButton("");
-		btnExcluir.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_delete.png")));
-		btnExcluir.setBounds(168, 11, 61, 34);
-		panelMenu.add(btnExcluir);
-		
-		JButton button_7 = new JButton("");
-		button_7.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/printer.png")));
-		button_7.setBounds(307, 11, 61, 34);
-		panelMenu.add(button_7);
-		
-		JButton button_8 = new JButton("");
-		button_8.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/cancel.png")));
-		button_8.setBounds(378, 11, 61, 34);
-		panelMenu.add(button_8);
-		
-		JButton button_4 = new JButton("");
-		button_4.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_go.png")));
-		button_4.setBounds(236, 11, 61, 34);
-		panelMenu.add(button_4);
-		
 		JPanel panelInserir = new JPanel();
-		panelInserir.setBounds(10, 83, 489, 249);
+		panelInserir.setBounds(10, 44, 489, 310);
 		panelConteiner.add(panelInserir);
 		panelInserir.setLayout(null);
 		panelInserir.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Inserir Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -114,11 +81,11 @@ public class ClientesView extends JInternalFrame {
 		panelInserir.add(txtRegistro);
 		
 		JButton button = new JButton("Salvar");
-		button.setBounds(381, 210, 73, 20);
+		button.setBounds(388, 279, 73, 20);
 		panelInserir.add(button);
 		
 		JButton button_1 = new JButton("Limpar");
-		button_1.setBounds(296, 210, 75, 20);
+		button_1.setBounds(303, 279, 75, 20);
 		panelInserir.add(button_1);
 		
 		JLabel label_3 = new JLabel("RG:");
@@ -181,33 +148,57 @@ public class ClientesView extends JInternalFrame {
 		panelInserir.add(txtCpf);
 		txtCpf.setColumns(10);
 		
-		JPanel panelPesquisar = new JPanel();
-		panelPesquisar.setBounds(10, 343, 489, 267);
-		panelConteiner.add(panelPesquisar);
-		panelPesquisar.setLayout(null);
-		panelPesquisar.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Pesquisar Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		JLabel lblEndereo = new JLabel("Endere\u00E7o:");
+		lblEndereo.setBounds(10, 208, 60, 14);
+		panelInserir.add(lblEndereo);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(20, 72, 448, 180);
-		panelPesquisar.add(scrollPane);
+		txtEndereco = new JTextField();
+		txtEndereco.setBounds(10, 225, 294, 20);
+		panelInserir.add(txtEndereco);
+		txtEndereco.setColumns(10);
 		
-		JLabel label_5 = new JLabel("Consultar:");
-		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_5.setBounds(10, 33, 60, 14);
-		panelPesquisar.add(label_5);
+		JLabel lblCep = new JLabel("CEP:");
+		lblCep.setBounds(10, 165, 46, 14);
+		panelInserir.add(lblCep);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(80, 31, 176, 20);
-		panelPesquisar.add(textField_4);
+		textField = new JTextField();
+		textField.setBounds(10, 177, 100, 20);
+		panelInserir.add(textField);
+		textField.setColumns(10);
 		
-		JButton button_2 = new JButton("Listar");
-		button_2.setBounds(371, 30, 97, 23);
-		panelPesquisar.add(button_2);
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(164, 177, 86, 20);
+		panelInserir.add(comboBox_1);
 		
-		JButton button_3 = new JButton("Pesquisar");
-		button_3.setBounds(266, 30, 95, 23);
-		panelPesquisar.add(button_3);
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setBounds(330, 177, 124, 20);
+		panelInserir.add(comboBox_2);
+		
+		JLabel lblEstado = new JLabel("Estado:");
+		lblEstado.setBounds(164, 165, 46, 14);
+		panelInserir.add(lblEstado);
+		
+		JLabel lblCidade = new JLabel("Cidade:");
+		lblCidade.setBounds(330, 165, 46, 14);
+		panelInserir.add(lblCidade);
+		
+		JLabel lblBairro = new JLabel("Bairro:");
+		lblBairro.setBounds(330, 208, 46, 14);
+		panelInserir.add(lblBairro);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(330, 225, 124, 20);
+		panelInserir.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton button_5 = new JButton("");
+		button_5.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/zoom.png")));
+		button_5.setBounds(113, 174, 25, 23);
+		panelInserir.add(button_5);
+		
+		JButton btnPesquisarCliente = new JButton("Pesquisar Cliente");
+		btnPesquisarCliente.setBounds(370, 10, 129, 23);
+		panelConteiner.add(btnPesquisarCliente);
 
 	}
 }
