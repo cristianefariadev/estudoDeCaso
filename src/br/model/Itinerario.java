@@ -3,27 +3,40 @@ package br.model;
 public class Itinerario {
 
 	private long id;
-	private Localizacao locOrigim;
-	private Localizacao locDestino;
-	
+	private String origem;
+	private String destino;
+	private float distancia;
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Localizacao getLocOrigim() {
-		return locOrigim;
-	}
-	public void setLocOrigim(Localizacao locOrigim) {
-		this.locOrigim = locOrigim;
-	}
-	public Localizacao getLocDestino() {
-		return locDestino;
-	}
-	public void setLocDestino(Localizacao locDestino) {
-		this.locDestino = locDestino;
+
+	public String getOrigem() {
+		return origem;
 	}
 
-	
+	public void setOrigem(String origem) {
+		this.origem = origem;
+	}
+
+	public String getDestino() {
+		return destino;
+	}
+
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+
+	public float getDistancia() {
+		return distancia;
+	}
+
+	public void setDistancia(float distancia) {
+		this.distancia = distancia;
+	}
+
 }

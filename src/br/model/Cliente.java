@@ -7,7 +7,7 @@ public class Cliente {
 	private String cpf;
 	private String rg;
 	private String cnh;
-	private char sexo;
+	private String sexo;
 	private Endereco endereco;
 	private Contato contato;
 	
@@ -56,11 +56,11 @@ public class Cliente {
 		this.cnh = cnh;
 	}
 
-	public char getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 

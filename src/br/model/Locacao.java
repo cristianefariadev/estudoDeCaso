@@ -6,23 +6,19 @@ import java.util.List;
 public class Locacao {
 
 	private long id;
-	private float subTotal;
 	private Date dataLocacao;
 	private Date dataDevolucao;
+	private float kmInicial;
+	private float kmFinal;
+	private float subTotal;
+	private Enum statusDev;
 	private List<Ocorrencia> ocorrerncia;
 	private Veiculo veiculo;
-	
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	public float getSubTotal() {
-		return subTotal;
-	}
-	public void setSubTotal(float subTotal) {
-		this.subTotal = subTotal;
 	}
 	public Date getDataLocacao() {
 		return dataLocacao;
@@ -35,6 +31,30 @@ public class Locacao {
 	}
 	public void setDataDevolucao(Date dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
+	}
+	public float getKmInicial() {
+		return kmInicial;
+	}
+	public void setKmInicial(float kmInicial) {
+		this.kmInicial = kmInicial;
+	}
+	public float getKmFinal() {
+		return kmFinal;
+	}
+	public void setKmFinal(float kmFinal) {
+		this.kmFinal = kmFinal;
+	}
+	public float getSubTotal() {
+		return subTotal;
+	}
+	public void setSubTotal(float subTotal) {
+		this.subTotal = subTotal;
+	}
+	public Enum getStatusDev() {
+		return statusDev;
+	}
+	public void setStatusDev(Enum statusDev) {
+		this.statusDev = statusDev;
 	}
 	public List<Ocorrencia> getOcorrerncia() {
 		return ocorrerncia;

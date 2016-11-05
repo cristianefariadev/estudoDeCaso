@@ -1,13 +1,14 @@
 package br.model;
 
+import java.util.Date;
+
 public class Modelo {
 	
 	private long id;
 	private String nome;
 	private String descricao;
 	private float taxa;
-	private Marca marca;
-	
+	private Date ano;
 	public long getId() {
 		return id;
 	}
@@ -32,13 +33,13 @@ public class Modelo {
 	public void setTaxa(float taxa) {
 		this.taxa = taxa;
 	}
-	public Marca getMarca() {
-		return marca;
+	public Date getAno() {
+		return ano;
 	}
-	public void setMarca(Marca marca) {
-		this.marca = marca;
+	public void setAno(Date ano) {
+		this.ano = ano;
 	}
-	
+
 	
 	
 	

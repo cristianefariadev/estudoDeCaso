@@ -6,9 +6,6 @@ public class Login {
 	private String usuario;
 	private String senha;
 	
-	//++++++++++++++++++++++++++++++++++++++++++
-	//METODO GET AND SETTER
-	
 	public long getId() {
 		return id;
 	}

@@ -47,34 +47,34 @@ public class ListClient extends JInternalFrame {
 		setBounds(100, 100, 743, 533);
 		getContentPane().setLayout(null);
 
-		JPanel panel = new JPanel();
-		panel.setLayout(null);
-		panel.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Pesquisar Cliente", TitledBorder.LEADING,
+		JPanel panelPesquisarCliente = new JPanel();
+		panelPesquisarCliente.setLayout(null);
+		panelPesquisarCliente.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Pesquisar Cliente", TitledBorder.LEADING,
 				TitledBorder.TOP, null, null));
-		panel.setBounds(10, 97, 676, 396);
-		getContentPane().add(panel);
+		panelPesquisarCliente.setBounds(10, 97, 676, 396);
+		getContentPane().add(panelPesquisarCliente);
 
 		JLabel label = new JLabel("Consultar:");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label.setBounds(10, 33, 60, 14);
-		panel.add(label);
+		panelPesquisarCliente.add(label);
 
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(80, 31, 176, 20);
-		panel.add(textField);
+		panelPesquisarCliente.add(textField);
 
 		JButton button = new JButton("Listar");
 		button.setBounds(371, 30, 97, 23);
-		panel.add(button);
+		panelPesquisarCliente.add(button);
 
 		JButton button_1 = new JButton("Pesquisar");
 		button_1.setBounds(266, 30, 95, 23);
-		panel.add(button_1);
+		panelPesquisarCliente.add(button_1);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 63, 656, 322);
-		panel.add(panel_1);
+		panelPesquisarCliente.add(panel_1);
 		panel_1.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -86,41 +86,41 @@ public class ListClient extends JInternalFrame {
 		table.setBounds(10, 11, 636, 300);
 		panel_1.add(table);
 
-		JPanel panel_2 = new JPanel();
-		panel_2.setLayout(null);
-		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel_2.setBounds(119, 25, 489, 61);
-		getContentPane().add(panel_2);
+		JPanel panelBotoes = new JPanel();
+		panelBotoes.setLayout(null);
+		panelBotoes.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panelBotoes.setBounds(119, 25, 489, 61);
+		getContentPane().add(panelBotoes);
 
 		JButton btnNovo = new JButton("");
 		btnNovo.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_add.png")));
 		btnNovo.setBounds(26, 11, 61, 34);
-		panel_2.add(btnNovo);
+		panelBotoes.add(btnNovo);
 
 		JButton btnEditar = new JButton("");
 		btnEditar.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_edit.png")));
 		btnEditar.setBounds(97, 11, 61, 34);
-		panel_2.add(btnEditar);
+		panelBotoes.add(btnEditar);
 
 		JButton buttonListar = new JButton("");
 		buttonListar.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_go.png")));
 		buttonListar.setBounds(168, 11, 61, 34);
-		panel_2.add(buttonListar);
+		panelBotoes.add(buttonListar);
 
 		JButton btnExcluir = new JButton("");
 		btnExcluir.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/user_delete.png")));
 		btnExcluir.setBounds(239, 11, 61, 34);
-		panel_2.add(btnExcluir);
+		panelBotoes.add(btnExcluir);
 
 		JButton btnImprimir = new JButton("");
 		btnImprimir.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/printer.png")));
 		btnImprimir.setBounds(307, 11, 61, 34);
-		panel_2.add(btnImprimir);
+		panelBotoes.add(btnImprimir);
 
 		JButton btnSair = new JButton("");
 		btnSair.setIcon(new ImageIcon(ClientesView.class.getResource("/image/icons/cancel.png")));
 		btnSair.setBounds(378, 11, 61, 34);
-		panel_2.add(btnSair);
+		panelBotoes.add(btnSair);
 
 	}
 }

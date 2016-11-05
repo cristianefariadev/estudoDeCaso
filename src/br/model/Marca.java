@@ -1,9 +1,12 @@
 package br.model;
 
+import java.util.List;
+
 public class Marca {
 
 	private long id;
 	private String nome;
+	private List<Modelo> modelo;
 	
 	public long getId() {
 		return id;
@@ -16,6 +19,12 @@ public class Marca {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public List<Modelo> getModelo() {
+		return modelo;
+	}
+	public void setModelo(List<Modelo> modelo) {
+		this.modelo = modelo;
 	}
 	
 	

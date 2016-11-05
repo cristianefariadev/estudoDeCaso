@@ -5,24 +5,23 @@ import java.util.List;
 
 public class Veiculo {
 	private long id;
-	private String numPlaca;
+	private String placa;
 	private String cor;
-	private String quilometragem;
-	private Date ano;	
+	private String chassi;
+	private Date anoFabricacao;	
 	private Modelo modelo;
-	private List<Acessorios> acessorio;
-	
+	private List<Acessorios> acessorios;
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getNumPlaca() {
-		return numPlaca;
+	public String getPlaca() {
+		return placa;
 	}
-	public void setNumPlaca(String numPlaca) {
-		this.numPlaca = numPlaca;
+	public void setPlaca(String placa) {
+		this.placa = placa;
 	}
 	public String getCor() {
 		return cor;
@@ -30,17 +29,17 @@ public class Veiculo {
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
-	public String getQuilometragem() {
-		return quilometragem;
+	public String getChassi() {
+		return chassi;
 	}
-	public void setQuilometragem(String quilometragem) {
-		this.quilometragem = quilometragem;
+	public void setChassi(String chassi) {
+		this.chassi = chassi;
 	}
-	public Date getAno() {
-		return ano;
+	public Date getAnoFabricacao() {
+		return anoFabricacao;
 	}
-	public void setAno(Date ano) {
-		this.ano = ano;
+	public void setAnoFabricacao(Date anoFabricacao) {
+		this.anoFabricacao = anoFabricacao;
 	}
 	public Modelo getModelo() {
 		return modelo;
@@ -48,12 +47,13 @@ public class Veiculo {
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 	}
-	public List<Acessorios> getAcessorio() {
-		return acessorio;
+	public List<Acessorios> getAcessorios() {
+		return acessorios;
 	}
-	public void setAcessorio(List<Acessorios> acessorio) {
-		this.acessorio = acessorio;
+	public void setAcessorios(List<Acessorios> acessorios) {
+		this.acessorios = acessorios;
 	}
 	
+
 	
 }
