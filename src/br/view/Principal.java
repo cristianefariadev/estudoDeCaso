@@ -95,65 +95,144 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 460);
+		setBounds(100, 100, 790, 605);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+				JMenuBar menuBar = new JMenuBar();
+				menuBar.setBounds(0, 0, 794, 21);
+				contentPane.add(menuBar);
+				
+						JMenu mnCadastro = new JMenu("Cadastro");
+						menuBar.add(mnCadastro);
+						
+								JMenuItem mntmCliente = new JMenuItem("Cliente");
+								mntmCliente.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/user.png")));
+								mnCadastro.add(mntmCliente);
+								
+										JMenuItem mntmVeiculo = new JMenuItem("Ve\u00EDculo");
+										mntmVeiculo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/car.png")));
+										mnCadastro.add(mntmVeiculo);
+										
+												JMenu mnPedido = new JMenu("Pedido");
+												menuBar.add(mnPedido);
+												
+														JMenuItem mntmPedidoLocacao = new JMenuItem("Loca\u00E7\u00E3o");
+														mntmPedidoLocacao.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_put.png")));
+														mnPedido.add(mntmPedidoLocacao);
+														
+																JMenuItem mntmPedidoDeDevoluo = new JMenuItem("Devolu\u00E7\u00E3o");
+																mntmPedidoDeDevoluo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_get.png")));
+																mnPedido.add(mntmPedidoDeDevoluo);
+																
+																JMenu mnFinanceiro = new JMenu("Financeiro");
+																menuBar.add(mnFinanceiro);
+																
+																JMenuItem mntmCaixa = new JMenuItem("Caixa");
+																mntmCaixa.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/calculator.png")));
+																mnFinanceiro.add(mntmCaixa);
+																
+																JMenuItem mntmPagamento = new JMenuItem("Pagamento");
+																mntmPagamento.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/calculator_add.png")));
+																mnFinanceiro.add(mntmPagamento);
+																
+																		JMenu mnRelatorios = new JMenu("Relat\u00F3rios");
+																		menuBar.add(mnRelatorios);
+																		
+																				JMenuItem mntmClientes = new JMenuItem("Clientes");
+																				mntmClientes.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/user.png")));
+																				mnRelatorios.add(mntmClientes);
+																				
+																						JMenuItem mntmVeiculos = new JMenuItem("Ve\u00EDculos");
+																						mntmVeiculos.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/car.png")));
+																						mnRelatorios.add(mntmVeiculos);
+																						
+																								JMenuItem mntmLocacao = new JMenuItem("Loca\u00E7\u00E3o");
+																								mntmLocacao.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_put.png")));
+																								mnRelatorios.add(mntmLocacao);
+																								
+																										JMenuItem mntmDevolucao = new JMenuItem("Devolu\u00E7\u00E3o");
+																										mntmDevolucao.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_get.png")));
+																										mnRelatorios.add(mntmDevolucao);
+		
 		JPanel panelMenus = new JPanel();
-		panelMenus.setBounds(0, 0, 784, 45);
+		panelMenus.setBounds(0, 22, 794, 45);
 		contentPane.add(panelMenus);
 		panelMenus.setLayout(null);
 		
-		JButton btnCliente = new JButton("Cliente");
-		btnCliente.setBounds(10, 11, 89, 23);
-		panelMenus.add(btnCliente);
+		JButton btnClienteMenu = new JButton("");
+		btnClienteMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/user.png")));
+		btnClienteMenu.setBounds(155, 11, 74, 23);
+		panelMenus.add(btnClienteMenu);
 		
-		JButton btnVeculos = new JButton("Ve\u00EDculos");
-		btnVeculos.setBounds(104, 11, 89, 23);
-		panelMenus.add(btnVeculos);
+		JButton btnVeiculosMenu = new JButton("");
+		btnVeiculosMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/car.png")));
+		btnVeiculosMenu.setBounds(239, 11, 74, 23);
+		panelMenus.add(btnVeiculosMenu);
 		
-		JButton btnLocao = new JButton("Loca\u00E7\u00E3o");
-		btnLocao.setBounds(204, 11, 89, 23);
-		panelMenus.add(btnLocao);
+		JButton btnLocacaoMenu = new JButton("");
+		btnLocacaoMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_get.png")));
+		btnLocacaoMenu.setBounds(323, 11, 74, 23);
+		panelMenus.add(btnLocacaoMenu);
 		
-		JButton btnDevoluo = new JButton("Devolu\u00E7\u00E3o");
-		btnDevoluo.setBounds(303, 11, 89, 23);
-		panelMenus.add(btnDevoluo);
+		JButton btnDevolucaoMenu = new JButton("");
+		btnDevolucaoMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_put.png")));
+		btnDevolucaoMenu.setBounds(407, 11, 74, 23);
+		panelMenus.add(btnDevolucaoMenu);
 		
-		JButton btnPagamento = new JButton("Pagamento");
-		btnPagamento.setBounds(402, 11, 89, 23);
-		panelMenus.add(btnPagamento);
+		JButton btnPagamentoMenu = new JButton("");
+		btnPagamentoMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/calculator_add.png")));
+		btnPagamentoMenu.setBounds(491, 11, 74, 23);
+		panelMenus.add(btnPagamentoMenu);
 		
-		JButton btnCaixa = new JButton("Caixa");
-		btnCaixa.setBounds(503, 11, 89, 23);
-		panelMenus.add(btnCaixa);
+		JButton btnCaixaMenu = new JButton("");
+		btnCaixaMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/calculator.png")));
+		btnCaixaMenu.setBounds(575, 11, 74, 23);
+		panelMenus.add(btnCaixaMenu);
 		
-		JButton btnSair_1 = new JButton("Sair");
-		btnSair_1.setBounds(602, 11, 89, 23);
-		panelMenus.add(btnSair_1);
+		JButton btnSairMenu = new JButton("");
+		btnSairMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cross.png")));
+		btnSairMenu.setBounds(659, 11, 68, 23);
+		panelMenus.add(btnSairMenu);
+		
+		JButton button_5 = new JButton("");
+		button_5.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/house.png")));
+		button_5.setBounds(71, 11, 74, 23);
+		panelMenus.add(button_5);
 		
 		JPanel panelCardLayout = new JPanel();
-		panelCardLayout.setBounds(0, 47, 784, 498);
+		panelCardLayout.setBounds(0, 68, 794, 477);
 		contentPane.add(panelCardLayout);
 		panelCardLayout.setLayout(new CardLayout(0, 0));
 		
+		JPanel CardHome = new JPanel();
+		CardHome.setBackground(Color.WHITE);
+		panelCardLayout.add(CardHome, "name_11639330185930");
+		CardHome.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(257, 184, 270, 130);
+		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/image/logo.png")));
+		CardHome.add(lblNewLabel);
+		
 		JPanel panelClientes = new JPanel();
 		panelCardLayout.add(panelClientes, "name_23041503687358");
-		panelClientes.setBackground(Color.LIGHT_GRAY);
+		panelClientes.setBackground(Color.WHITE);
 		panelClientes.setLayout(null);
 		
 		JButton btnPesquisarCliente = new JButton("Pesquisar Cliente");
-		btnPesquisarCliente.setBounds(549, 26, 129, 23);
+		btnPesquisarCliente.setBounds(551, 11, 162, 23);
 		panelClientes.add(btnPesquisarCliente);
 		
 		JPanel panelConteudoCliente = new JPanel();
 		panelConteudoCliente.setBackground(Color.WHITE);
 		panelConteudoCliente.setLayout(null);
-		panelConteudoCliente.setBorder(new TitledBorder(new CompoundBorder(), "Cadastro de Clientes", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panelConteudoCliente.setBounds(28, 71, 706, 382);
+		panelConteudoCliente.setBorder(new TitledBorder(new CompoundBorder(), "           CADASTRO DE CLIENTE", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panelConteudoCliente.setBounds(10, 45, 706, 382);
 		panelClientes.add(panelConteudoCliente);
 		
 		JLabel label = new JLabel("Nome Completo:");
@@ -182,10 +261,10 @@ public class Principal extends JFrame {
 		label_2.setBounds(195, 90, 89, 14);
 		panelConteudoCliente.add(label_2);
 		
-		JLabel label_3 = new JLabel("N\u00FAmero de Registro CNH:");
-		label_3.setHorizontalAlignment(SwingConstants.LEFT);
-		label_3.setBounds(467, 37, 139, 14);
-		panelConteudoCliente.add(label_3);
+		JLabel lblNRegistroCnh = new JLabel("N\u00BA Registro CNH:");
+		lblNRegistroCnh.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNRegistroCnh.setBounds(467, 37, 139, 14);
+		panelConteudoCliente.add(lblNRegistroCnh);
 		
 		JLabel label_4 = new JLabel("C\u00F3digo de Registro");
 		label_4.setBounds(10, 37, 160, 14);
@@ -288,14 +367,16 @@ public class Principal extends JFrame {
 		panelConteudoCliente.add(txtEndereco_1);
 		txtEndereco_1.setColumns(10);
 		
-		JButton button_3 = new JButton(">");
-		button_3.setBounds(686, 26, 51, 23);
+		JButton button_3 = new JButton("");
+		button_3.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/arrow_right.png")));
+		button_3.setBounds(723, 11, 51, 23);
 		panelClientes.add(button_3);
 		
-		JButton button_4 = new JButton("<");
-		button_4.setBounds(487, 26, 51, 23);
+		JButton button_4 = new JButton("");
+		button_4.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/arrow_left.png")));
+		button_4.setBounds(490, 11, 51, 23);
 		panelClientes.add(button_4);
-		panelClientes.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{panelConteudoCliente, label, label_1, txtCodigo, btnSalvarCliente, btnLimpar, label_2, label_3, label_4, label_5, label_6, cbSexo, label_7, label_8, txtCep, cbEstado, btnPesquisarCliente, cbCidade, label_9, label_10, label_11, btnPesquisarCep, label_12, txtRegistroCnh, txtNomeCompleto, txtRg, txtTelefone, txtEmail, txtCpf, txtBairro, button_3, button_4}));
+		panelClientes.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{panelConteudoCliente, label, label_1, txtCodigo, btnSalvarCliente, btnLimpar, label_2, lblNRegistroCnh, label_4, label_5, label_6, cbSexo, label_7, label_8, txtCep, cbEstado, btnPesquisarCliente, cbCidade, label_9, label_10, label_11, btnPesquisarCep, label_12, txtRegistroCnh, txtNomeCompleto, txtRg, txtTelefone, txtEmail, txtCpf, txtBairro, button_3, button_4}));
 		
 		JPanel panelDevolucao = new JPanel();
 		panelCardLayout.add(panelDevolucao, "name_23041519743646");
@@ -889,70 +970,28 @@ public class Principal extends JFrame {
 				JButton button_2 = new JButton("<");
 				button_2.setBounds(705, 11, 69, 23);
 				panelPagamento.add(button_2);
+				
+				JPanel panel_1 = new JPanel();
+				panel_1.setBounds(0, 548, 794, 28);
+				contentPane.add(panel_1);
+				panel_1.setLayout(null);
+				
+				JLabel lblNewLabel_1 = new JLabel("Usu\u00E1rio logado:");
+				lblNewLabel_1.setBounds(10, 7, 88, 14);
+				panel_1.add(lblNewLabel_1);
+				
+				JLabel lblCristiane = new JLabel("Cristiane");
+				lblCristiane.setBounds(104, 7, 61, 14);
+				panel_1.add(lblCristiane);
+				
+				JLabel label_3 = new JLabel("11/11/2016");
+				label_3.setVerticalAlignment(SwingConstants.BOTTOM);
+				label_3.setBounds(714, 7, 70, 14);
+				panel_1.add(label_3);
 		
 		setTitle("LoCAR Express - Locadora de Ve\u00EDculos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 605);
-
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
-
-		JMenu mnCadastro = new JMenu("Cadastro");
-		menuBar.add(mnCadastro);
-
-		JMenuItem mntmCliente = new JMenuItem("Cliente");
-		mntmCliente.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				ClientesView  novaInstancia = new ClientesView();
-				novaInstancia.setVisible(true);
-			}
-		});
-		mntmCliente.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/user.png")));
-		mnCadastro.add(mntmCliente);
-
-		JMenuItem mntmVeiculo = new JMenuItem("Ve\u00EDculo");
-		mntmVeiculo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/car.png")));
-		mnCadastro.add(mntmVeiculo);
-
-		JMenu mnPedido = new JMenu("Pedido");
-		menuBar.add(mnPedido);
-
-		JMenuItem mntmPedidoLocacao = new JMenuItem("Loca\u00E7\u00E3o");
-		mntmPedidoLocacao.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_put.png")));
-		mnPedido.add(mntmPedidoLocacao);
-
-		JMenuItem mntmPedidoDeDevoluo = new JMenuItem("Devolu\u00E7\u00E3o");
-		mntmPedidoDeDevoluo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_get.png")));
-		mnPedido.add(mntmPedidoDeDevoluo);
-		
-		JMenu mnFinanceiro = new JMenu("Financeiro");
-		menuBar.add(mnFinanceiro);
-		
-		JMenuItem mntmCaixa = new JMenuItem("Caixa");
-		mnFinanceiro.add(mntmCaixa);
-		
-		JMenuItem mntmPagamento = new JMenuItem("Pagamento");
-		mnFinanceiro.add(mntmPagamento);
-
-		JMenu mnRelatorios = new JMenu("Relat\u00F3rios");
-		menuBar.add(mnRelatorios);
-
-		JMenuItem mntmClientes = new JMenuItem("Clientes");
-		mntmClientes.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/user.png")));
-		mnRelatorios.add(mntmClientes);
-
-		JMenuItem mntmVeiculos = new JMenuItem("Ve\u00EDculos");
-		mntmVeiculos.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/car.png")));
-		mnRelatorios.add(mntmVeiculos);
-
-		JMenuItem mntmLocacao = new JMenuItem("Loca\u00E7\u00E3o");
-		mntmLocacao.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_put.png")));
-		mnRelatorios.add(mntmLocacao);
-
-		JMenuItem mntmDevolucao = new JMenuItem("Devolu\u00E7\u00E3o");
-		mntmDevolucao.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/page_white_get.png")));
-		mnRelatorios.add(mntmDevolucao);
 
 	}
 }

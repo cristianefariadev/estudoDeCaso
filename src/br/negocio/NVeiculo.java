@@ -27,7 +27,7 @@ public class NVeiculo {
 	
 	public boolean adicionarAcessorio(Acessorios acessorio){
 		
-		return this.veiculo.getAcessorio().add(acessorio);
+		return this.veiculo.getAcessorios().add(acessorio);
 	}
 
 	public Veiculo getVeiculo() {

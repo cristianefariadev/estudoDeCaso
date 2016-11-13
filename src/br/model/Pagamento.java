@@ -42,7 +42,7 @@ public class Pagamento {
 		this.valorTroco = valorTroco;
 	}
 	
-	fpublic Enum<TipoPagamento> getTipoPagamento() {
+	public Enum<TipoPagamento> getTipoPagamento() {
 		return tipoPagamento;
 	}
 	public void setTipoPagamento(Enum<TipoPagamento> tipoPagamento) {
