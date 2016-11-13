@@ -16,7 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class ListClient extends JInternalFrame {
+public class ListDevolucao extends JInternalFrame {
 	/**
 	 * 
 	 */
@@ -31,7 +31,7 @@ public class ListClient extends JInternalFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ListClient frame = new ListClient();
+					ListDevolucao frame = new ListDevolucao();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,13 +43,13 @@ public class ListClient extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ListClient() {
+	public ListDevolucao() {
 		setBounds(100, 100, 743, 533);
 		getContentPane().setLayout(null);
 
 		JPanel panelPesquisarCliente = new JPanel();
 		panelPesquisarCliente.setLayout(null);
-		panelPesquisarCliente.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Pesquisar Clientes", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panelPesquisarCliente.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Pesquisar Devolucao", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panelPesquisarCliente.setBounds(10, 11, 676, 469);
 		getContentPane().add(panelPesquisarCliente);
 

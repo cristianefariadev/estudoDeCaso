@@ -2,6 +2,9 @@ package br.view;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,6 +17,8 @@ import javax.swing.JWindow;
 import javax.swing.Timer;
 import javax.swing.border.EtchedBorder;
 
+
+
 public class SplashView extends JWindow {
 
 	private static final long serialVersionUID = 1L;
@@ -25,11 +30,10 @@ public class SplashView extends JWindow {
 	private static JProgressBar progressBar;
 	private static Timer timer;
 	private static int DURATION = 25, percentMin = 1, percentMax = 100;
-
-	// ActionListener para o Timer do swing
-
+	private Frame principal;
+	
 	ActionListener actionListener = new ActionListener() {
-		LoginView login = new LoginView();
+		//Principal principal = new Principal();
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -39,8 +43,9 @@ public class SplashView extends JWindow {
 				timer.stop();
 				SplashView.this.setVisible(false);
 				dispose();
-				//login.setVisible(true);
+				principal.setVisible(true);
 				dispose();
+				
 			}
 			percentMin++;
 		}
@@ -54,6 +59,7 @@ public class SplashView extends JWindow {
 		setLocationRelativeTo(null);
 		setVisible(true);
 		startProgressBar();
+		this.principal = new Frame();
 
 	}
 

@@ -9,7 +9,7 @@ public class Pagamento {
 	private float valorRecebido;
 	private float valorCompra;
 	private float valorTroco;
-	private Enum tipoPagamento;
+	private Enum<TipoPagamento> tipoPagamento;
 	
 	public long getId() {
 		return id;
@@ -41,10 +41,12 @@ public class Pagamento {
 	public void setValorTroco(float valorTroco) {
 		this.valorTroco = valorTroco;
 	}
-	public Enum getTipoPagamento() {
+	
+	fpublic Enum<TipoPagamento> getTipoPagamento() {
 		return tipoPagamento;
 	}
-	public void setTipoPagamento(Enum tipoPagamento) {
+	public void setTipoPagamento(Enum<TipoPagamento> tipoPagamento) {
 		this.tipoPagamento = tipoPagamento;
 	}
+
 }

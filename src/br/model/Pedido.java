@@ -7,7 +7,7 @@ public class Pedido {
 
 	private long id;
 	private Date data;
-	private Enum status;
+	private Enum<StatusPedido> status;
 	private float caucao;
 	private float total;
 	private List<Locacao> locacao;
@@ -25,10 +25,10 @@ public class Pedido {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	public Enum getStatus() {
+	public Enum<StatusPedido> getStatus() {
 		return status;
 	}
-	public void setStatus(Enum status) {
+	public void setStatus(Enum<StatusPedido> status) {
 		this.status = status;
 	}
 	public float getCaucao() {

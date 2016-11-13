@@ -11,7 +11,7 @@ public class Locacao {
 	private float kmInicial;
 	private float kmFinal;
 	private float subTotal;
-	private Enum statusDev;
+	
 	private List<Ocorrencia> ocorrerncia;
 	private Veiculo veiculo;
 	public long getId() {
@@ -50,12 +50,7 @@ public class Locacao {
 	public void setSubTotal(float subTotal) {
 		this.subTotal = subTotal;
 	}
-	public Enum getStatusDev() {
-		return statusDev;
-	}
-	public void setStatusDev(Enum statusDev) {
-		this.statusDev = statusDev;
-	}
+
 	public List<Ocorrencia> getOcorrerncia() {
 		return ocorrerncia;
 	}
