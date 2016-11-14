@@ -2,6 +2,23 @@ package br.negocio;
 
 import br.model.Caixa;
 
+/**
+ * <p>
+ * <b>Title:</b> NCaixa.java
+ * </p>
+ * 
+ * <p>
+ * <b>Description:</b>
+ * </p>	
+ * 	
+ * <p>	
+ * <b>Company: </b> CristiianeFaria LTDA
+ * </p>	
+ * 	
+ * @author Cristiane Faria - cristiane.trc@gmail.com
+ * 
+ * @version 1.0.0
+ */
 public class NCaixa {
 
 	private Caixa caixa;

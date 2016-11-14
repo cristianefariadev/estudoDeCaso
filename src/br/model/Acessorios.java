@@ -1,5 +1,22 @@
 package br.model;
 
+/**
+ * <p>
+ * <b>Title:</b> Acessorios.java
+ * </p>
+ * 
+ * <p>
+ * <b>Description:</b>
+ * </p>	
+ * 	
+ * <p>	
+ * <b>Company: </b> CristiianeFaria LTDA
+ * </p>	
+ * 	
+ * @author Cristiane Faria - cristiane.trc@gmail.com
+ * 
+ * @version 1.0.0
+ */
 public class Acessorios {
 
 	private long id;
