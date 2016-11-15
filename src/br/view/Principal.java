@@ -3,20 +3,23 @@ package br.view;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
+import java.awt.Font;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -24,14 +27,10 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
+import br.control.ClienteCtr;
 import br.control.NavegadorCardCtr;
-import java.awt.SystemColor;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import javax.swing.JScrollPane;
 
 public class Principal extends JFrame {
 
@@ -40,7 +39,6 @@ public class Principal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtEndereco;
 	private JTextField txtCodigo;
 	private JTextField txtCep;
 	private JTextField txtRegistroCnh;
@@ -74,6 +72,7 @@ public class Principal extends JFrame {
 	private JPanel cardClientes;
 	private JPanel cardHome;
 	private NavegadorCardCtr navegadorCard;
+
 	private CardLayout card;
 	private JTextField txtValorapagar;
 	private JTextField textField_1;
@@ -91,7 +90,6 @@ public class Principal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-
 					Principal frame = new Principal();
 					frame.setVisible(true);;  
 					frame.setSize(800, 605);  
@@ -123,6 +121,8 @@ public class Principal extends JFrame {
 		
 		panelCardLayout.setBounds(0, 68, 794, 486);
 		contentPane.add(panelCardLayout);
+		
+	
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 794, 21);
@@ -285,6 +285,7 @@ public class Principal extends JFrame {
 					panelConteudoCliente.add(label_6);
 			
 					JComboBox cbSexo = new JComboBox();
+					cbSexo.setModel(new DefaultComboBoxModel(new String[] {"F", "M"}));
 					cbSexo.setBounds(612, 55, 65, 20);
 					panelConteudoCliente.add(cbSexo);
 			
@@ -302,10 +303,12 @@ public class Principal extends JFrame {
 					panelConteudoCliente.add(txtCep);
 			
 					JComboBox cbEstado = new JComboBox();
+					cbEstado.setModel(new DefaultComboBoxModel(new String[] {"GO\u00CDAS"}));
 					cbEstado.setBounds(467, 234, 210, 20);
 					panelConteudoCliente.add(cbEstado);
 			
 					JComboBox cbCidade = new JComboBox();
+					cbCidade.setModel(new DefaultComboBoxModel(new String[] {"GOI\u00C2NIA", "AN\u00C1POLIS", "NER\u00D3POLIS"}));
 					cbCidade.setBounds(195, 234, 245, 20);
 					panelConteudoCliente.add(cbCidade);
 			
@@ -380,6 +383,7 @@ public class Principal extends JFrame {
 						btnPesquisarCliente.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/zoom.png")));
 						btnPesquisarCliente.setBounds(549, 11, 164, 25);
 						cardClientes.add(btnPesquisarCliente);
+						
 					
 					
 
@@ -406,10 +410,12 @@ public class Principal extends JFrame {
 				panelConteudoVeiculos.add(lblModelo);
 		
 				JComboBox cbModeloVeiculo = new JComboBox();
+				cbModeloVeiculo.setModel(new DefaultComboBoxModel(new String[] {"FORD"}));
 				cbModeloVeiculo.setBounds(207, 45, 180, 20);
 				panelConteudoVeiculos.add(cbModeloVeiculo);
 		
 				JComboBox cbMarcaVeiculo = new JComboBox();
+				cbMarcaVeiculo.setModel(new DefaultComboBoxModel(new String[] {"FUSION"}));
 				cbMarcaVeiculo.setBounds(437, 45, 196, 20);
 				panelConteudoVeiculos.add(cbMarcaVeiculo);
 		
@@ -422,6 +428,7 @@ public class Principal extends JFrame {
 				panelConteudoVeiculos.add(lblAnoDeFabricao);
 		
 				JComboBox cbAnoFabricacao = new JComboBox();
+				cbAnoFabricacao.setModel(new DefaultComboBoxModel(new String[] {"2016"}));
 				cbAnoFabricacao.setBounds(26, 45, 129, 20);
 				panelConteudoVeiculos.add(cbAnoFabricacao);
 		
@@ -457,14 +464,17 @@ public class Principal extends JFrame {
 				panelConteudoVeiculos.add(checkBox_6);
 		
 				JCheckBox checkBox_7 = new JCheckBox("C\u00E2mbio Autom\u00E1tico");
+				checkBox_7.setSelected(true);
 				checkBox_7.setBounds(26, 175, 129, 23);
 				panelConteudoVeiculos.add(checkBox_7);
 		
 				JCheckBox checkBox_8 = new JCheckBox("Ar Condicionado");
+				checkBox_8.setSelected(true);
 				checkBox_8.setBounds(26, 149, 129, 23);
 				panelConteudoVeiculos.add(checkBox_8);
 		
 				JCheckBox checkBox_9 = new JCheckBox("Dire\u00E7\u00E3o El\u00E9trica");
+				checkBox_9.setSelected(true);
 				checkBox_9.setBounds(207, 149, 125, 23);
 				panelConteudoVeiculos.add(checkBox_9);
 		
@@ -473,6 +483,7 @@ public class Principal extends JFrame {
 				panelConteudoVeiculos.add(checkBox_10);
 		
 				JCheckBox checkBox_11 = new JCheckBox("Flex");
+				checkBox_11.setSelected(true);
 				checkBox_11.setBounds(437, 175, 125, 23);
 				panelConteudoVeiculos.add(checkBox_11);
 		
@@ -520,6 +531,7 @@ public class Principal extends JFrame {
 				panel_3.add(label_17);
 		
 				JComboBox cbMarca = new JComboBox();
+				cbMarca.setModel(new DefaultComboBoxModel(new String[] {"FORD"}));
 				cbMarca.setBounds(10, 51, 147, 20);
 				panel_3.add(cbMarca);
 		
@@ -528,6 +540,7 @@ public class Principal extends JFrame {
 				panel_3.add(label_18);
 		
 				JComboBox cbModelo = new JComboBox();
+				cbModelo.setModel(new DefaultComboBoxModel(new String[] {"FUSION"}));
 				cbModelo.setBounds(187, 51, 148, 20);
 				panel_3.add(cbModelo);
 		
@@ -603,10 +616,12 @@ public class Principal extends JFrame {
 				panel_4.add(label_22);
 		
 				JComboBox cbUfOrigem = new JComboBox();
+				cbUfOrigem.setModel(new DefaultComboBoxModel(new String[] {"GO", "AC", "SP"}));
 				cbUfOrigem.setBounds(159, 47, 53, 20);
 				panel_4.add(cbUfOrigem);
 		
 				JComboBox cbCidadeOrigem = new JComboBox();
+				cbCidadeOrigem.setModel(new DefaultComboBoxModel(new String[] {"GOI\u00C2NIA"}));
 				cbCidadeOrigem.setBounds(221, 47, 137, 20);
 				panel_4.add(cbCidadeOrigem);
 		
@@ -615,10 +630,12 @@ public class Principal extends JFrame {
 				panel_4.add(label_23);
 		
 				JComboBox cbUfDestino = new JComboBox();
+				cbUfDestino.setModel(new DefaultComboBoxModel(new String[] {"GO"}));
 				cbUfDestino.setBounds(159, 99, 53, 20);
 				panel_4.add(cbUfDestino);
 		
 				JComboBox cbCidadeDestino = new JComboBox();
+				cbCidadeDestino.setModel(new DefaultComboBoxModel(new String[] {"AN\u00C1POLIS"}));
 				cbCidadeDestino.setBounds(221, 99, 137, 20);
 				panel_4.add(cbCidadeDestino);
 		
@@ -679,6 +696,7 @@ public class Principal extends JFrame {
 								panelDadosCliente.add(lblCliente);
 								
 										JComboBox cbCliente = new JComboBox();
+										cbCliente.setModel(new DefaultComboBoxModel(new String[] {"CRISTIANE FARIA", "BRUNO RODRIGUES"}));
 										cbCliente.setBounds(10, 47, 325, 20);
 										panelDadosCliente.add(cbCliente);
 										
@@ -730,11 +748,12 @@ public class Principal extends JFrame {
 				panelConteudoDevolucao.add(label_13);
 		
 				JComboBox cbClienteDevolucao = new JComboBox();
+				cbClienteDevolucao.setModel(new DefaultComboBoxModel(new String[] {"CRISTIANE FARIA"}));
 				cbClienteDevolucao.setBounds(20, 138, 294, 20);
 				panelConteudoDevolucao.add(cbClienteDevolucao);
 		
 				JLabel label_14 = new JLabel("Ve\u00EDculo Locado:");
-				label_14.setBounds(20, 75, 78, 14);
+				label_14.setBounds(20, 75, 128, 14);
 				panelConteudoDevolucao.add(label_14);
 		
 				JLabel label_15 = new JLabel("Ocorr\u00EAncias:");
@@ -742,11 +761,11 @@ public class Principal extends JFrame {
 				panelConteudoDevolucao.add(label_15);
 		
 				JRadioButton radioButton = new JRadioButton("Sim");
-				radioButton.setBounds(444, 49, 52, 23);
+				radioButton.setBounds(456, 49, 52, 23);
 				panelConteudoDevolucao.add(radioButton);
 		
 				JRadioButton radioButton_1 = new JRadioButton("N\u00E3o");
-				radioButton_1.setBounds(387, 49, 109, 23);
+				radioButton_1.setBounds(387, 49, 58, 23);
 				panelConteudoDevolucao.add(radioButton_1);
 		
 				JLabel label_16 = new JLabel("Qual?");
@@ -754,10 +773,12 @@ public class Principal extends JFrame {
 				panelConteudoDevolucao.add(label_16);
 		
 				JComboBox cbOcorrencias = new JComboBox();
+				cbOcorrencias.setEnabled(false);
 				cbOcorrencias.setBounds(387, 94, 238, 20);
 				panelConteudoDevolucao.add(cbOcorrencias);
 		
 				JButton btnAdicionarOcorrencias = new JButton("+");
+				btnAdicionarOcorrencias.setEnabled(false);
 				btnAdicionarOcorrencias.setBounds(635, 93, 46, 23);
 				panelConteudoDevolucao.add(btnAdicionarOcorrencias);
 		
@@ -795,6 +816,7 @@ public class Principal extends JFrame {
 				panelConteudoDevolucao.add(txtValorArever);
 		
 				JComboBox cbVeiculoLocado = new JComboBox();
+				cbVeiculoLocado.setModel(new DefaultComboBoxModel(new String[] {"FORD FUSION 2016"}));
 				cbVeiculoLocado.setBounds(20, 90, 294, 20);
 				panelConteudoDevolucao.add(cbVeiculoLocado);
 		
@@ -809,22 +831,27 @@ public class Principal extends JFrame {
 				panelConteudoDevolucao.add(separator_1);
 				
 				JComboBox comboBox = new JComboBox();
+				comboBox.setEnabled(false);
 				comboBox.setBounds(388, 126, 238, 20);
 				panelConteudoDevolucao.add(comboBox);
 				
 				JButton button = new JButton("+");
+				button.setEnabled(false);
 				button.setBounds(636, 125, 46, 23);
 				panelConteudoDevolucao.add(button);
 				
 				JComboBox comboBox_1 = new JComboBox();
+				comboBox_1.setEnabled(false);
 				comboBox_1.setBounds(387, 156, 238, 20);
 				panelConteudoDevolucao.add(comboBox_1);
 				
 				JButton button_1 = new JButton("+");
+				button_1.setEnabled(false);
 				button_1.setBounds(635, 155, 46, 23);
 				panelConteudoDevolucao.add(button_1);
 				
 				JComboBox comboBox_2 = new JComboBox();
+				comboBox_2.setEnabled(false);
 				comboBox_2.setBounds(387, 188, 238, 20);
 				panelConteudoDevolucao.add(comboBox_2);
 				
@@ -857,16 +884,17 @@ public class Principal extends JFrame {
 				
 				JButton btnCancelardevolucao = new JButton("Cancelar");
 				btnCancelardevolucao.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
-				btnCancelardevolucao.setBounds(582, 349, 102, 23);
+				btnCancelardevolucao.setBounds(571, 349, 113, 23);
 				panelConteudoDevolucao.add(btnCancelardevolucao);
 				
 				JButton btnCaixa = new JButton("Caixa");
-				btnCaixa.setBounds(483, 349, 89, 23);
+				btnCaixa.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/calculator.png")));
+				btnCaixa.setBounds(444, 349, 117, 23);
 				panelConteudoDevolucao.add(btnCaixa);
 		
 				JButton btnPesquisarDevoluo = new JButton("Pesquisar Devolu\u00E7\u00E3o");
 				btnPesquisarDevoluo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/zoom.png")));
-				btnPesquisarDevoluo.setBounds(609, 11, 163, 23);
+				btnPesquisarDevoluo.setBounds(587, 11, 185, 23);
 				cardDevolucao.add(btnPesquisarDevoluo);
 
 			JPanel cardPagamento = new JPanel();
@@ -898,6 +926,7 @@ public class Principal extends JFrame {
 										panelConteudoPagamento.add(lblFormaDePagamento);
 										
 												JComboBox cbTipoPagamento = new JComboBox();
+												cbTipoPagamento.setModel(new DefaultComboBoxModel(new String[] {"\u00C0 VISTA", "CART\u00C3O DE CR\u00C9DITO"}));
 												cbTipoPagamento.setBounds(10, 152, 173, 20);
 												panelConteudoPagamento.add(cbTipoPagamento);
 												
@@ -977,6 +1006,7 @@ public class Principal extends JFrame {
 																																						panelConteudoPagamento.add(lblCliente_1);
 																																						
 																																						JComboBox comboBox_3 = new JComboBox();
+																																						comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"CRISTIANE FARIA"}));
 																																						comboBox_3.setBounds(10, 101, 317, 20);
 																																						panelConteudoPagamento.add(comboBox_3);
 																																						

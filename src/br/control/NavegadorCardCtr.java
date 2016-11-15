@@ -20,7 +20,20 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JPanel;
 
- public class NavegadorCardCtr implements ActionListener{
+ /**
+ * <p>
+ * <b>Title:</b> NavegadorCardCtr.java
+ * </p>
+ * 
+ * <p>
+ * <b>Description:</b>
+ * </p>	
+ * 	
+ * @author Cristiane Faria - cristiane.trc@gmail.com
+ * 
+ * @version 1.0.0
+ */
+public class NavegadorCardCtr implements ActionListener{
 	private JPanel PanelCardLayout;
 	private CardLayout card;
 	
@@ -31,9 +44,6 @@ import javax.swing.JPanel;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		
-		
 		
 		if(e.getActionCommand().equals("Home"))
 			card.show(this.PanelCardLayout,"cardHome");

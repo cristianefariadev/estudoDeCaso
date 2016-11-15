@@ -18,8 +18,8 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
 
-public class ListDevolucao extends JInternalFrame {
-	private JTextField txtPesquisarDevolucao;
+public class ListPagamento extends JInternalFrame {
+	private JTextField txtPesquisarPagamento;
 
 	/**
 	 * Launch the application.
@@ -31,7 +31,7 @@ public class ListDevolucao extends JInternalFrame {
 			public void run() {
 
 				try {
-					ListDevolucao frame = new ListDevolucao();
+					ListPagamento frame = new ListPagamento();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,8 +43,8 @@ public class ListDevolucao extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ListDevolucao() {
-		setTitle("PESQUISAR DEVOLUÇÃO");
+	public ListPagamento() {
+		setTitle("PESQUISAR PAGAMENTO");
 		setMaximizable(true);
 		setBounds(100, 100, 625, 427);
 		getContentPane().setLayout(null);
@@ -60,17 +60,17 @@ public class ListDevolucao extends JInternalFrame {
 		panel.add(lblConsultarPor);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"C\u00D3DIGO", "CLIENTE"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"C\u00D3DIGO", "NOME"}));
 		comboBox.setBounds(99, 8, 72, 20);
 		panel.add(comboBox);
 		
-		txtPesquisarDevolucao = new JTextField();
-		txtPesquisarDevolucao.setBounds(181, 8, 298, 20);
-		panel.add(txtPesquisarDevolucao);
-		txtPesquisarDevolucao.setColumns(10);
+		txtPesquisarPagamento = new JTextField();
+		txtPesquisarPagamento.setBounds(181, 8, 298, 20);
+		panel.add(txtPesquisarPagamento);
+		txtPesquisarPagamento.setColumns(10);
 		
 		JButton button = new JButton("");
-		button.setIcon(new ImageIcon(ListDevolucao.class.getResource("/image/icons/zoom.png")));
+		button.setIcon(new ImageIcon(ListPagamento.class.getResource("/image/icons/zoom.png")));
 		button.setBounds(489, 7, 60, 23);
 		panel.add(button);
 		
@@ -84,17 +84,17 @@ public class ListDevolucao extends JInternalFrame {
 		panel_1.add(lblTabelaPopulada);
 		
 		JButton btnAlterar = new JButton("Alterar");
-		btnAlterar.setIcon(new ImageIcon(ListDevolucao.class.getResource("/image/icons/pencil.png")));
+		btnAlterar.setIcon(new ImageIcon(ListPagamento.class.getResource("/image/icons/pencil.png")));
 		btnAlterar.setBounds(219, 349, 104, 23);
 		panel.add(btnAlterar);
 		
 		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setIcon(new ImageIcon(ListDevolucao.class.getResource("/image/icons/delete.png")));
+		btnExcluir.setIcon(new ImageIcon(ListPagamento.class.getResource("/image/icons/delete.png")));
 		btnExcluir.setBounds(333, 349, 113, 23);
 		panel.add(btnExcluir);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setIcon(new ImageIcon(ListDevolucao.class.getResource("/image/icons/cancel.png")));
+		btnCancelar.setIcon(new ImageIcon(ListPagamento.class.getResource("/image/icons/cancel.png")));
 		btnCancelar.setBounds(456, 349, 113, 23);
 		panel.add(btnCancelar);
 

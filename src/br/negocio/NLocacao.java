@@ -1,7 +1,11 @@
 package br.negocio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.model.Locacao;
 import br.model.Ocorrencia;
+import br.model.Veiculo;
 
 public class NLocacao {
 
@@ -35,6 +39,27 @@ public class NLocacao {
 
 	public void setLocacao(Locacao locacao) {
 		this.locacao = locacao;
+	}
+	
+	public void salvar(){
+		
+	}
+	
+	public void alterar(){
+		
+	}
+	
+	public void excluir(int id){
+		
+	}
+	
+	public Locacao consultar(int id){
+		return new Locacao();
+	}
+	
+	public List<Locacao> listar(String texto){
+		
+		return new ArrayList<Locacao>();
 	}
 	
 	

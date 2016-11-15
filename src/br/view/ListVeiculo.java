@@ -4,32 +4,32 @@ import java.awt.EventQueue;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+
 
 public class ListVeiculo extends JInternalFrame {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTable table;
+	private JTextField txtPesquisarVeiculo;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+
 		EventQueue.invokeLater(new Runnable() {
+
 			public void run() {
+
 				try {
 					ListVeiculo frame = new ListVeiculo();
 					frame.setVisible(true);
@@ -44,47 +44,59 @@ public class ListVeiculo extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public ListVeiculo() {
-		setBounds(100, 100, 743, 533);
+		setTitle("PESQUISAR VEÍCULO");
+		setMaximizable(true);
+		setBounds(100, 100, 625, 427);
 		getContentPane().setLayout(null);
-
-		JPanel panelPesquisarCliente = new JPanel();
-		panelPesquisarCliente.setLayout(null);
-		panelPesquisarCliente.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Pesquisar Veículo", TitledBorder.LEADING,
-				TitledBorder.TOP, null, null));
-		panelPesquisarCliente.setBounds(10, 11, 676, 469);
-		getContentPane().add(panelPesquisarCliente);
-
-		JLabel label = new JLabel("Consultar:");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label.setBounds(10, 33, 60, 14);
-		panelPesquisarCliente.add(label);
-
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(80, 31, 176, 20);
-		panelPesquisarCliente.add(textField);
-
-		JButton button = new JButton("Listar");
-		button.setBounds(371, 30, 97, 23);
-		panelPesquisarCliente.add(button);
-
-		JButton button_1 = new JButton("Pesquisar");
-		button_1.setBounds(266, 30, 95, 23);
-		panelPesquisarCliente.add(button_1);
-
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(0, 0, 609, 397);
+		getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblConsultarPor = new JLabel("Consultar por:");
+		lblConsultarPor.setBounds(23, 11, 90, 14);
+		panel.add(lblConsultarPor);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"C\u00D3DIGO", "NOME"}));
+		comboBox.setBounds(99, 8, 72, 20);
+		panel.add(comboBox);
+		
+		txtPesquisarVeiculo = new JTextField();
+		txtPesquisarVeiculo.setBounds(181, 8, 298, 20);
+		panel.add(txtPesquisarVeiculo);
+		txtPesquisarVeiculo.setColumns(10);
+		
+		JButton button = new JButton("");
+		button.setIcon(new ImageIcon(ListVeiculo.class.getResource("/image/icons/zoom.png")));
+		button.setBounds(489, 7, 60, 23);
+		panel.add(button);
+		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 63, 656, 322);
-		panelPesquisarCliente.add(panel_1);
+		panel_1.setBounds(23, 47, 546, 278);
+		panel.add(panel_1);
 		panel_1.setLayout(null);
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 656, 322);
-		panel_1.add(scrollPane);
-
-		table = new JTable();
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "CODIGO" }));
-		table.setBounds(10, 11, 636, 300);
-		panel_1.add(table);
+		
+		JLabel lblTabelaPopulada = new JLabel("Tabela populada");
+		lblTabelaPopulada.setBounds(213, 132, 119, 14);
+		panel_1.add(lblTabelaPopulada);
+		
+		JButton btnAlterar = new JButton("Alterar");
+		btnAlterar.setIcon(new ImageIcon(ListVeiculo.class.getResource("/image/icons/pencil.png")));
+		btnAlterar.setBounds(219, 349, 104, 23);
+		panel.add(btnAlterar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setIcon(new ImageIcon(ListVeiculo.class.getResource("/image/icons/delete.png")));
+		btnExcluir.setBounds(333, 349, 113, 23);
+		panel.add(btnExcluir);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setIcon(new ImageIcon(ListVeiculo.class.getResource("/image/icons/cancel.png")));
+		btnCancelar.setBounds(456, 349, 113, 23);
+		panel.add(btnCancelar);
 
 	}
 }
