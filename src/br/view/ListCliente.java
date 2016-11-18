@@ -46,6 +46,7 @@ public class ListCliente extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public ListCliente() {
+		setEnabled(false);
 		setTitle("PESQUISAR CLIENTE");
 		setMaximizable(true);
 		setBounds(100, 100, 625, 427);

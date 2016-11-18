@@ -5,8 +5,8 @@
  * 
  * <p>
  * <b>Description:</b>
- * </p>	
- * 	
+ * </p>
+ * 
  * @author Cristiane Faria - cristiane.trc@gmail.com
  * 
  * @version 1.0.0
@@ -20,54 +20,66 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JPanel;
 
- /**
+/**
  * <p>
  * <b>Title:</b> NavegadorCardCtr.java
  * </p>
  * 
  * <p>
  * <b>Description:</b>
- * </p>	
- * 	
+ * </p>
+ * 
  * @author Cristiane Faria - cristiane.trc@gmail.com
  * 
  * @version 1.0.0
  */
-public class NavegadorCardCtr implements ActionListener{
+public class NavegadorCardCtr implements ActionListener {
+
 	private JPanel PanelCardLayout;
+
 	private CardLayout card;
-	
-	public NavegadorCardCtr(JPanel painelCardLayout, CardLayout card){
+
+	public NavegadorCardCtr( JPanel painelCardLayout, CardLayout card ) {
 		this.PanelCardLayout = painelCardLayout;
 		this.card = card;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getActionCommand().equals("Home"))
-			card.show(this.PanelCardLayout,"cardHome");
-		
-		if(e.getActionCommand().equals("Cliente"))
-			card.show(this.PanelCardLayout,"cardClientes");
-		
-		if(e.getActionCommand().equals("Veiculo"))
-			card.show(this.PanelCardLayout,"cardVeiculos");
-		
-		if(e.getActionCommand().equals("Loca\u00E7\u00E3o"))
-			card.show(this.PanelCardLayout,"cardLocacao");
-		
-		if(e.getActionCommand().equals("Devolu\u00E7\u00E3o"))
-			card.show(this.PanelCardLayout,"cardDevolucao");
-		
-		if(e.getActionCommand().equals("Caixa"))
-			card.show(this.PanelCardLayout,"cardPagamento");
-		
-		if(e.getActionCommand().equals("Sair"))
-			System.exit(0);
-		
-	}
-	
 
+		if (e.getActionCommand().equals("Home"))
+			card.show(this.PanelCardLayout, "cardHome");
+
+		if (e.getActionCommand().equals("Cliente"))
+			card.show(this.PanelCardLayout, "cardClientes");
+
+		if (e.getActionCommand().equals("Veiculo"))
+			card.show(this.PanelCardLayout, "cardVeiculos");
+
+		if (e.getActionCommand().equals("Loca\u00E7\u00E3o"))
+			card.show(this.PanelCardLayout, "cardLocacao");
+
+		if (e.getActionCommand().equals("Devolu\u00E7\u00E3o"))
+			card.show(this.PanelCardLayout, "cardDevolucao");
+
+		if (e.getActionCommand().equals("Caixa"))
+			card.show(this.PanelCardLayout, "cardPagamento");
+		
+		if (e.getActionCommand().equals("Acess\u00F3rio"))
+			card.show(this.PanelCardLayout, "cardAcessorio");
+		
+		if (e.getActionCommand().equals("Ocorr\u00EAncia"))
+			card.show(this.PanelCardLayout, "cardOcorrencia");
+		
+		if (e.getActionCommand().equals("Modelo"))
+			card.show(this.PanelCardLayout, "cardModelo");
+		
+		if (e.getActionCommand().equals("Marca"))
+			card.show(this.PanelCardLayout, "cardMarca");
+
+		if (e.getActionCommand().equals("Sair"))
+			System.exit(0);
+
+	}
 
 }

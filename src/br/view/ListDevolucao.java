@@ -44,6 +44,7 @@ public class ListDevolucao extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public ListDevolucao() {
+		setEnabled(false);
 		setTitle("PESQUISAR DEVOLUÇÃO");
 		setMaximizable(true);
 		setBounds(100, 100, 625, 427);

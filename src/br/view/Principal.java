@@ -31,6 +31,7 @@ import javax.swing.border.TitledBorder;
 
 import br.control.ClienteCtr;
 import br.control.NavegadorCardCtr;
+import javax.swing.JTextArea;
 
 public class Principal extends JFrame {
 
@@ -81,7 +82,25 @@ public class Principal extends JFrame {
 	private JTextField txtPesquisarcodigolocacao;
 	private JTextField txtSaldoCaixa;
 	private JTextField txtDataCaixa;
-	private JTable table_1;
+	private JTextField textField;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_10;
+	private JTextField textField_4;
+	private JTextField textField_7;
+	private JTextField textField_9;
+	private JTextField textField_12;
+	private JTextField textField_8;
+	private JTextField textField_11;
+	private JTextField textField_13;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	private JTextField textField_19;
+	private JTextField textField_20;
+	private JTextField textField_21;
 
 	/**
 	 * Launch the application.
@@ -140,6 +159,27 @@ public class Principal extends JFrame {
 				mntmVeiculo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/car.png")));
 				mntmVeiculo.addActionListener(navegadorCard);
 				mnCadastro.add(mntmVeiculo);
+				
+				JMenuItem mntmAcessorio = new JMenuItem("Acess\u00F3rio");
+				mntmAcessorio.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/tag_blue.png")));
+				mntmAcessorio.addActionListener(navegadorCard);
+				mnCadastro.add(mntmAcessorio);
+				
+				
+				JMenuItem mntmOcorrencia = new JMenuItem("Ocorr\u00EAncia");
+				mntmOcorrencia.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/bell.png")));
+				mntmOcorrencia.addActionListener(navegadorCard);
+				mnCadastro.add(mntmOcorrencia);
+				
+				JMenuItem mntmModelo = new JMenuItem("Modelo");
+				mntmModelo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/note.png")));
+				mntmModelo.addActionListener(navegadorCard);
+				mnCadastro.add(mntmModelo);
+				
+				JMenuItem mntmMarca = new JMenuItem("Marca");
+				mntmMarca.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/lightning.png")));
+				mntmMarca.addActionListener(navegadorCard);
+				mnCadastro.add(mntmMarca);
 	
 			JMenu mnPedido = new JMenu("Pedido");
 			menuBar.add(mnPedido);
@@ -169,16 +209,13 @@ public class Principal extends JFrame {
 			mntmDocumentação.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/application_error.png")));
 			mnAjuda.add(mntmDocumentação);
 	
-			
-		
-
+	
 		JPanel panelMenus = new JPanel();
 		panelMenus.setBounds(0, 22, 794, 45);
 		contentPane.add(panelMenus);
 		panelMenus.setLayout(null);
 		
-		
-		
+
 			JButton btnInicioMenu = new JButton("Home");
 			btnInicioMenu.addActionListener(navegadorCard);
 			btnInicioMenu.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/house.png")));
@@ -220,7 +257,7 @@ public class Principal extends JFrame {
 				cardHome = new JPanel();
 				cardHome.setBackground(Color.WHITE);
 				panelCardLayout.add(cardHome, "cardHome");
-					cardHome.setLayout(null);
+				cardHome.setLayout(null);
 		
 					JLabel lblNewLabel = new JLabel("");
 					lblNewLabel.setBounds(266, 200, 262, 85);
@@ -390,7 +427,7 @@ public class Principal extends JFrame {
 			JPanel cardVeiculos = new JPanel();
 			cardVeiculos.setBackground(Color.WHITE);
 			panelCardLayout.add(cardVeiculos, "cardVeiculos");
-				cardVeiculos.setLayout(null);
+			cardVeiculos.setLayout(null);
 			
 				JButton btnPesquisarVeiculo = new JButton("Pesquisar Veiculo");
 				btnPesquisarVeiculo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/zoom.png")));
@@ -663,7 +700,7 @@ public class Principal extends JFrame {
 												
 														JButton btnEfetuarPagamento = new JButton("Efetuar Pagamento");
 														btnEfetuarPagamento.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/tick.png")));
-														btnEfetuarPagamento.setBounds(87, 305, 185, 23);
+														btnEfetuarPagamento.setBounds(160, 370, 185, 23);
 														panel_4.add(btnEfetuarPagamento);
 														
 														JLabel lblValorAPagar = new JLabel("VALOR A PAGAR:");
@@ -680,7 +717,7 @@ public class Principal extends JFrame {
 		
 				JButton btnSair = new JButton("Cancelar");
 				btnSair.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
-				btnSair.setBounds(246, 373, 112, 23);
+				btnSair.setBounds(24, 370, 112, 23);
 				panel_4.add(btnSair);
 				
 						JPanel panelDadosCliente = new JPanel();
@@ -1045,12 +1082,470 @@ public class Principal extends JFrame {
 																																						panel_1.add(txtDataCaixa);
 																																						txtDataCaixa.setColumns(10);
 																																						
-																																						JScrollPane scrollPane = new JScrollPane();
-																																						scrollPane.setBounds(10, 108, 325, 283);
-																																						panel_1.add(scrollPane);
+																																						JPanel panel_2 = new JPanel();
+																																						panel_2.setBounds(10, 97, 321, 278);
+																																						panel_1.add(panel_2);
+																																						panel_2.setLayout(null);
 																																						
-																																						table_1 = new JTable();
-																																						scrollPane.setColumnHeaderView(table_1);
+																																						JLabel lblTabelaDosPagamentos = new JLabel("Tabela dos pagamentos recebidos");
+																																						lblTabelaDosPagamentos.setBounds(79, 132, 163, 14);
+																																						panel_2.add(lblTabelaDosPagamentos);
+																																						
+																																						JPanel cardOcorrencia = new JPanel();
+																																						cardOcorrencia.setBackground(Color.WHITE);
+																																						panelCardLayout.add(cardOcorrencia, "cardOcorrencia");
+																																						cardOcorrencia.setLayout(null);
+																																						
+																																						JPanel panelConteudoOcorrencia = new JPanel();
+																																						panelConteudoOcorrencia.setLayout(null);
+																																						panelConteudoOcorrencia.setBorder(new TitledBorder(new CompoundBorder(), "CADASTRAR OCORR\u00CANCIA", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+																																						panelConteudoOcorrencia.setBackground(Color.WHITE);
+																																						panelConteudoOcorrencia.setBounds(24, 11, 760, 464);
+																																						cardOcorrencia.add(panelConteudoOcorrencia);
+																																						
+																																						JLabel lblDescio = new JLabel("Desci\u00E7\u00E3o:");
+																																						lblDescio.setBounds(127, 37, 94, 14);
+																																						panelConteudoOcorrencia.add(lblDescio);
+																																						
+																																						textField = new JTextField();
+																																						textField.setEnabled(false);
+																																						textField.setColumns(10);
+																																						textField.setBounds(10, 55, 107, 20);
+																																						panelConteudoOcorrencia.add(textField);
+																																						
+																																						JButton button_2 = new JButton("Salvar");
+																																						button_2.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/accept.png")));
+																																						button_2.setBounds(631, 94, 107, 20);
+																																						panelConteudoOcorrencia.add(button_2);
+																																						
+																																						JButton button_3 = new JButton("Limpar");
+																																						button_3.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_3.setBounds(511, 94, 110, 20);
+																																						panelConteudoOcorrencia.add(button_3);
+																																						
+																																						JLabel lblData = new JLabel("Data");
+																																						lblData.setHorizontalAlignment(SwingConstants.LEFT);
+																																						lblData.setBounds(513, 37, 57, 14);
+																																						panelConteudoOcorrencia.add(lblData);
+																																						
+																																						JLabel label_35 = new JLabel("C\u00F3digo de Registro");
+																																						label_35.setBounds(10, 37, 160, 14);
+																																						panelConteudoOcorrencia.add(label_35);
+																																						
+																																						JLabel lblTaxa = new JLabel("Taxa:");
+																																						lblTaxa.setBounds(633, 37, 86, 14);
+																																						panelConteudoOcorrencia.add(lblTaxa);
+																																						
+																																						textField_5 = new JTextField();
+																																						textField_5.setColumns(10);
+																																						textField_5.setBounds(513, 55, 110, 20);
+																																						panelConteudoOcorrencia.add(textField_5);
+																																						
+																																						textField_6 = new JTextField();
+																																						textField_6.setColumns(10);
+																																						textField_6.setBounds(127, 55, 376, 20);
+																																						panelConteudoOcorrencia.add(textField_6);
+																																						
+																																						textField_10 = new JTextField();
+																																						textField_10.setColumns(10);
+																																						textField_10.setBounds(633, 56, 107, 20);
+																																						panelConteudoOcorrencia.add(textField_10);
+																																						
+																																						JButton btnNovaOcorrncia = new JButton("Nova Ocorr\u00EAncia");
+																																						btnNovaOcorrncia.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/add.png")));
+																																						btnNovaOcorrncia.setBounds(329, 94, 172, 20);
+																																						panelConteudoOcorrencia.add(btnNovaOcorrncia);
+																																						
+																																						JPanel panel_5 = new JPanel();
+																																						panel_5.setLayout(null);
+																																						panel_5.setBackground(Color.WHITE);
+																																						panel_5.setBounds(71, 145, 609, 308);
+																																						panelConteudoOcorrencia.add(panel_5);
+																																						
+																																						JLabel label_21 = new JLabel("Consultar por:");
+																																						label_21.setBounds(31, 17, 90, 14);
+																																						panel_5.add(label_21);
+																																						
+																																						JComboBox comboBox_4 = new JComboBox();
+																																						comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"C\u00D3DIGO", "DESCRI\u00C7\u00C3O"}));
+																																						comboBox_4.setBounds(119, 14, 72, 20);
+																																						panel_5.add(comboBox_4);
+																																						
+																																						textField_4 = new JTextField();
+																																						textField_4.setColumns(10);
+																																						textField_4.setBounds(201, 14, 306, 20);
+																																						panel_5.add(textField_4);
+																																						
+																																						JButton button_4 = new JButton("");
+																																						button_4.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/zoom.png")));
+																																						button_4.setBounds(517, 11, 60, 23);
+																																						panel_5.add(button_4);
+																																						
+																																						JPanel panel_6 = new JPanel();
+																																						panel_6.setLayout(null);
+																																						panel_6.setBounds(31, 47, 546, 169);
+																																						panel_5.add(panel_6);
+																																						
+																																						JLabel label_27 = new JLabel("Tabela populada");
+																																						label_27.setBounds(213, 77, 119, 14);
+																																						panel_6.add(label_27);
+																																						
+																																						JButton button_5 = new JButton("Alterar");
+																																						button_5.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/pencil.png")));
+																																						button_5.setBounds(218, 259, 104, 23);
+																																						panel_5.add(button_5);
+																																						
+																																						JButton button_6 = new JButton("Excluir");
+																																						button_6.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/delete.png")));
+																																						button_6.setBounds(332, 259, 113, 23);
+																																						panel_5.add(button_6);
+																																						
+																																						JButton button_7 = new JButton("Cancelar");
+																																						button_7.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_7.setBounds(455, 259, 113, 23);
+																																						panel_5.add(button_7);
+																																						
+																																						JPanel cardAcessorio = new JPanel();
+																																						cardAcessorio.setBackground(Color.WHITE);
+																																						panelCardLayout.add(cardAcessorio, "cardAcessorio");
+																																						cardAcessorio.setLayout(null);
+																																						
+																																						JPanel panelAcessorio = new JPanel();
+																																						panelAcessorio.setLayout(null);
+																																						panelAcessorio.setBorder(new TitledBorder(new CompoundBorder(), "CADASTRAR ACESS\u00D3RIO", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+																																						panelAcessorio.setBackground(Color.WHITE);
+																																						panelAcessorio.setBounds(17, 11, 760, 453);
+																																						cardAcessorio.add(panelAcessorio);
+																																						
+																																						JLabel lblNome_1 = new JLabel("Nome:");
+																																						lblNome_1.setBounds(127, 37, 94, 14);
+																																						panelAcessorio.add(lblNome_1);
+																																						
+																																						textField_17 = new JTextField();
+																																						textField_17.setEnabled(false);
+																																						textField_17.setColumns(10);
+																																						textField_17.setBounds(10, 55, 100, 20);
+																																						panelAcessorio.add(textField_17);
+																																						
+																																						JButton button_16 = new JButton("Salvar");
+																																						button_16.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/accept.png")));
+																																						button_16.setBounds(631, 94, 107, 20);
+																																						panelAcessorio.add(button_16);
+																																						
+																																						JButton button_21 = new JButton("Limpar");
+																																						button_21.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_21.setBounds(511, 94, 110, 20);
+																																						panelAcessorio.add(button_21);
+																																						
+																																						JLabel lblDescrio_1 = new JLabel("Descri\u00E7\u00E3o:");
+																																						lblDescrio_1.setHorizontalAlignment(SwingConstants.LEFT);
+																																						lblDescrio_1.setBounds(274, 37, 118, 14);
+																																						panelAcessorio.add(lblDescrio_1);
+																																						
+																																						JLabel label_43 = new JLabel("C\u00F3digo de Registro");
+																																						label_43.setBounds(10, 37, 160, 14);
+																																						panelAcessorio.add(label_43);
+																																						
+																																						JLabel label_44 = new JLabel("Taxa:");
+																																						label_44.setBounds(633, 37, 86, 14);
+																																						panelAcessorio.add(label_44);
+																																						
+																																						textField_18 = new JTextField();
+																																						textField_18.setColumns(10);
+																																						textField_18.setBounds(274, 55, 347, 20);
+																																						panelAcessorio.add(textField_18);
+																																						
+																																						textField_19 = new JTextField();
+																																						textField_19.setColumns(10);
+																																						textField_19.setBounds(127, 55, 137, 20);
+																																						panelAcessorio.add(textField_19);
+																																						
+																																						textField_20 = new JTextField();
+																																						textField_20.setColumns(10);
+																																						textField_20.setBounds(633, 56, 107, 20);
+																																						panelAcessorio.add(textField_20);
+																																						
+																																						JButton btnNovoAcessrio = new JButton("Novo Acess\u00F3rio");
+																																						btnNovoAcessrio.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/add.png")));
+																																						btnNovoAcessrio.setBounds(329, 94, 172, 20);
+																																						panelAcessorio.add(btnNovoAcessrio);
+																																						
+																																						JPanel panel_11 = new JPanel();
+																																						panel_11.setLayout(null);
+																																						panel_11.setBackground(Color.WHITE);
+																																						panel_11.setBounds(71, 145, 609, 308);
+																																						panelAcessorio.add(panel_11);
+																																						
+																																						JLabel label_45 = new JLabel("Consultar por:");
+																																						label_45.setBounds(31, 17, 94, 14);
+																																						panel_11.add(label_45);
+																																						
+																																						JComboBox comboBox_8 = new JComboBox();
+																																						comboBox_8.setModel(new DefaultComboBoxModel(new String[] {"C\u00D3DIGO"}));
+																																						comboBox_8.setBounds(120, 14, 85, 20);
+																																						panel_11.add(comboBox_8);
+																																						
+																																						textField_21 = new JTextField();
+																																						textField_21.setColumns(10);
+																																						textField_21.setBounds(215, 14, 292, 20);
+																																						panel_11.add(textField_21);
+																																						
+																																						JButton button_23 = new JButton("");
+																																						button_23.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/zoom.png")));
+																																						button_23.setBounds(517, 11, 60, 23);
+																																						panel_11.add(button_23);
+																																						
+																																						JPanel panel_12 = new JPanel();
+																																						panel_12.setLayout(null);
+																																						panel_12.setBounds(31, 47, 546, 169);
+																																						panel_11.add(panel_12);
+																																						
+																																						JLabel label_46 = new JLabel("Tabela populada");
+																																						label_46.setBounds(213, 77, 119, 14);
+																																						panel_12.add(label_46);
+																																						
+																																						JButton button_24 = new JButton("Alterar");
+																																						button_24.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/pencil.png")));
+																																						button_24.setBounds(218, 259, 104, 23);
+																																						panel_11.add(button_24);
+																																						
+																																						JButton button_25 = new JButton("Excluir");
+																																						button_25.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/delete.png")));
+																																						button_25.setBounds(332, 259, 113, 23);
+																																						panel_11.add(button_25);
+																																						
+																																						JButton button_26 = new JButton("Cancelar");
+																																						button_26.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_26.setBounds(455, 259, 113, 23);
+																																						panel_11.add(button_26);
+																																						
+																																						JPanel cardModelo = new JPanel();
+																																						cardModelo.setBackground(Color.WHITE);
+																																						panelCardLayout.add(cardModelo, "cardModelo");
+																																						cardModelo.setLayout(null);
+																																						
+																																						JPanel panelConteudoModelo = new JPanel();
+																																						panelConteudoModelo.setLayout(null);
+																																						panelConteudoModelo.setBorder(new TitledBorder(new CompoundBorder(), "CADASTRAR MARCA DO VE\u00CDCULO", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+																																						panelConteudoModelo.setBackground(Color.WHITE);
+																																						panelConteudoModelo.setBounds(10, 11, 774, 464);
+																																						cardModelo.add(panelConteudoModelo);
+																																						
+																																						JLabel lblNome = new JLabel("Nome:");
+																																						lblNome.setBounds(130, 37, 94, 14);
+																																						panelConteudoModelo.add(lblNome);
+																																						
+																																						textField_8 = new JTextField();
+																																						textField_8.setEnabled(false);
+																																						textField_8.setColumns(10);
+																																						textField_8.setBounds(10, 55, 107, 20);
+																																						panelConteudoModelo.add(textField_8);
+																																						
+																																						JButton button_10 = new JButton("Salvar");
+																																						button_10.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/accept.png")));
+																																						button_10.setBounds(597, 121, 107, 20);
+																																						panelConteudoModelo.add(button_10);
+																																						
+																																						JButton button_15 = new JButton("Limpar");
+																																						button_15.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_15.setBounds(477, 121, 110, 20);
+																																						panelConteudoModelo.add(button_15);
+																																						
+																																						JLabel lblDescrio = new JLabel("Descri\u00E7\u00E3o:");
+																																						lblDescrio.setHorizontalAlignment(SwingConstants.LEFT);
+																																						lblDescrio.setBounds(319, 37, 84, 14);
+																																						panelConteudoModelo.add(lblDescrio);
+																																						
+																																						JLabel label_40 = new JLabel("C\u00F3digo de Registro");
+																																						label_40.setBounds(10, 37, 160, 14);
+																																						panelConteudoModelo.add(label_40);
+																																						
+																																						textField_11 = new JTextField();
+																																						textField_11.setColumns(10);
+																																						textField_11.setBounds(130, 55, 179, 20);
+																																						panelConteudoModelo.add(textField_11);
+																																						
+																																						JButton btnNovoModelo = new JButton("Novo Modelo");
+																																						btnNovoModelo.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/add.png")));
+																																						btnNovoModelo.setBounds(323, 121, 144, 20);
+																																						panelConteudoModelo.add(btnNovoModelo);
+																																						
+																																						JPanel panel_9 = new JPanel();
+																																						panel_9.setLayout(null);
+																																						panel_9.setBackground(Color.WHITE);
+																																						panel_9.setBounds(82, 187, 609, 277);
+																																						panelConteudoModelo.add(panel_9);
+																																						
+																																						JLabel label_41 = new JLabel("Consultar por:");
+																																						label_41.setBounds(23, 17, 90, 14);
+																																						panel_9.add(label_41);
+																																						
+																																						JComboBox comboBox_7 = new JComboBox();
+																																						comboBox_7.setModel(new DefaultComboBoxModel(new String[] {"C\u00D3DIGO"}));
+																																						comboBox_7.setBounds(119, 14, 72, 20);
+																																						panel_9.add(comboBox_7);
+																																						
+																																						textField_13 = new JTextField();
+																																						textField_13.setColumns(10);
+																																						textField_13.setBounds(201, 14, 298, 20);
+																																						panel_9.add(textField_13);
+																																						
+																																						JButton button_17 = new JButton("");
+																																						button_17.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/zoom.png")));
+																																						button_17.setBounds(509, 11, 60, 23);
+																																						panel_9.add(button_17);
+																																						
+																																						JPanel panel_10 = new JPanel();
+																																						panel_10.setLayout(null);
+																																						panel_10.setBounds(23, 47, 546, 169);
+																																						panel_9.add(panel_10);
+																																						
+																																						JLabel label_42 = new JLabel("Tabela populada");
+																																						label_42.setBounds(213, 77, 119, 14);
+																																						panel_10.add(label_42);
+																																						
+																																						JButton button_18 = new JButton("Alterar");
+																																						button_18.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/pencil.png")));
+																																						button_18.setBounds(219, 238, 104, 23);
+																																						panel_9.add(button_18);
+																																						
+																																						JButton button_19 = new JButton("Excluir");
+																																						button_19.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/delete.png")));
+																																						button_19.setBounds(333, 238, 113, 23);
+																																						panel_9.add(button_19);
+																																						
+																																						JButton button_20 = new JButton("Cancelar");
+																																						button_20.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_20.setBounds(456, 238, 113, 23);
+																																						panel_9.add(button_20);
+																																						
+																																						JLabel lblAno = new JLabel("Ano:");
+																																						lblAno.setBounds(10, 86, 46, 14);
+																																						panelConteudoModelo.add(lblAno);
+																																						
+																																						textField_14 = new JTextField();
+																																						textField_14.setBounds(10, 100, 94, 20);
+																																						panelConteudoModelo.add(textField_14);
+																																						textField_14.setColumns(10);
+																																						
+																																						JLabel lblTaxa_1 = new JLabel("Taxa:");
+																																						lblTaxa_1.setBounds(130, 86, 46, 14);
+																																						panelConteudoModelo.add(lblTaxa_1);
+																																						
+																																						textField_15 = new JTextField();
+																																						textField_15.setBounds(130, 100, 107, 20);
+																																						panelConteudoModelo.add(textField_15);
+																																						textField_15.setColumns(10);
+																																						
+																																						textField_16 = new JTextField();
+																																						textField_16.setBounds(319, 55, 385, 20);
+																																						panelConteudoModelo.add(textField_16);
+																																						textField_16.setColumns(10);
+																																						
+																																						JPanel cardMarca = new JPanel();
+																																						cardMarca.setBackground(Color.WHITE);
+																																						panelCardLayout.add(cardMarca, "cardMarca");
+																																						cardMarca.setLayout(null);
+																																						
+																																						JPanel panelConteudoMarca = new JPanel();
+																																						panelConteudoMarca.setLayout(null);
+																																						panelConteudoMarca.setBorder(new TitledBorder(new CompoundBorder(), "CADASTRAR MARCA DO VE\u00CDCULO", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+																																						panelConteudoMarca.setBackground(Color.WHITE);
+																																						panelConteudoMarca.setBounds(10, 11, 774, 464);
+																																						cardMarca.add(panelConteudoMarca);
+																																						
+																																						JLabel label_32 = new JLabel("Desci\u00E7\u00E3o:");
+																																						label_32.setBounds(127, 37, 94, 14);
+																																						panelConteudoMarca.add(label_32);
+																																						
+																																						textField_7 = new JTextField();
+																																						textField_7.setEnabled(false);
+																																						textField_7.setColumns(10);
+																																						textField_7.setBounds(10, 55, 107, 20);
+																																						panelConteudoMarca.add(textField_7);
+																																						
+																																						JButton button_8 = new JButton("Salvar");
+																																						button_8.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/accept.png")));
+																																						button_8.setBounds(631, 94, 107, 20);
+																																						panelConteudoMarca.add(button_8);
+																																						
+																																						JButton button_9 = new JButton("Limpar");
+																																						button_9.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_9.setBounds(511, 94, 110, 20);
+																																						panelConteudoMarca.add(button_9);
+																																						
+																																						JLabel lblModelo_1 = new JLabel("Modelo:");
+																																						lblModelo_1.setHorizontalAlignment(SwingConstants.LEFT);
+																																						lblModelo_1.setBounds(513, 37, 57, 14);
+																																						panelConteudoMarca.add(lblModelo_1);
+																																						
+																																						JLabel label_36 = new JLabel("C\u00F3digo de Registro");
+																																						label_36.setBounds(10, 37, 160, 14);
+																																						panelConteudoMarca.add(label_36);
+																																						
+																																						textField_9 = new JTextField();
+																																						textField_9.setColumns(10);
+																																						textField_9.setBounds(127, 55, 376, 20);
+																																						panelConteudoMarca.add(textField_9);
+																																						
+																																						JButton btnNovaMarca = new JButton("Nova Marca");
+																																						btnNovaMarca.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/add.png")));
+																																						btnNovaMarca.setBounds(357, 94, 144, 20);
+																																						panelConteudoMarca.add(btnNovaMarca);
+																																						
+																																						JPanel panel_7 = new JPanel();
+																																						panel_7.setLayout(null);
+																																						panel_7.setBackground(Color.WHITE);
+																																						panel_7.setBounds(71, 145, 609, 308);
+																																						panelConteudoMarca.add(panel_7);
+																																						
+																																						JLabel label_38 = new JLabel("Consultar por:");
+																																						label_38.setBounds(31, 19, 90, 14);
+																																						panel_7.add(label_38);
+																																						
+																																						JComboBox comboBox_5 = new JComboBox();
+																																						comboBox_5.setModel(new DefaultComboBoxModel(new String[] {"C\u00D3DIGO"}));
+																																						comboBox_5.setBounds(119, 16, 72, 20);
+																																						panel_7.add(comboBox_5);
+																																						
+																																						textField_12 = new JTextField();
+																																						textField_12.setColumns(10);
+																																						textField_12.setBounds(201, 16, 298, 20);
+																																						panel_7.add(textField_12);
+																																						
+																																						JButton button_11 = new JButton("");
+																																						button_11.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/zoom.png")));
+																																						button_11.setBounds(509, 13, 60, 23);
+																																						panel_7.add(button_11);
+																																						
+																																						JPanel panel_8 = new JPanel();
+																																						panel_8.setLayout(null);
+																																						panel_8.setBounds(23, 47, 546, 169);
+																																						panel_7.add(panel_8);
+																																						
+																																						JLabel label_39 = new JLabel("Tabela populada");
+																																						label_39.setBounds(213, 77, 119, 14);
+																																						panel_8.add(label_39);
+																																						
+																																						JButton button_12 = new JButton("Alterar");
+																																						button_12.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/pencil.png")));
+																																						button_12.setBounds(218, 259, 104, 23);
+																																						panel_7.add(button_12);
+																																						
+																																						JButton button_13 = new JButton("Excluir");
+																																						button_13.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/delete.png")));
+																																						button_13.setBounds(332, 259, 113, 23);
+																																						panel_7.add(button_13);
+																																						
+																																						JButton button_14 = new JButton("Cancelar");
+																																						button_14.setIcon(new ImageIcon(Principal.class.getResource("/image/icons/cancel.png")));
+																																						button_14.setBounds(455, 259, 113, 23);
+																																						panel_7.add(button_14);
+																																						
+																																						JComboBox comboBox_6 = new JComboBox();
+																																						comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"FUSION"}));
+																																						comboBox_6.setBounds(511, 55, 227, 20);
+																																						panelConteudoMarca.add(comboBox_6);
 
 		JPanel panelFooter = new JPanel();
 		panelFooter.setBounds(0, 555, 794, 21);
